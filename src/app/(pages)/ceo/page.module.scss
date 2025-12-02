@@ -21,6 +21,11 @@
                 font-size: 32px;
             }
 
+            h2 {
+                color: var(--grey);
+                font-size: 24px;
+            }
+
             .flexView {
                 display: flex;
                 gap: 50px;
@@ -43,6 +48,7 @@
                     flex: 1;
 
                     .img {
+                        overflow: hidden;
                         position: relative;
                         width: 100%;
                         border-radius: 8px;
@@ -90,6 +96,11 @@
                     font-size: 32px;
                 }
 
+                h2 {
+                    color: var(--grey);
+                    font-size: 24px;
+                }
+
                 .flexView {
                     display: flex;
                     gap: 50px;
@@ -112,6 +123,7 @@
                         flex: 1;
 
                         .img {
+                            overflow: hidden;
                             position: relative;
                             width: 100%;
                             border-radius: 8px;
@@ -160,6 +172,11 @@
                     font-size: 32px;
                 }
 
+                h2 {
+                    color: var(--grey);
+                    font-size: 24px;
+                }
+
                 .flexView {
                     display: flex;
                     flex-direction: column;
@@ -183,6 +200,7 @@
                         flex: 1;
 
                         .img {
+                            overflow: hidden;
                             position: relative;
                             width: 100%;
                             border-radius: 8px;
@@ -231,6 +249,11 @@
                     font-size: 28px;
                 }
 
+                h2 {
+                    color: var(--grey);
+                    font-size: 20px;
+                }
+
                 .flexView {
                     display: flex;
                     flex-direction: column;
@@ -255,6 +278,7 @@
                         flex: 1;
 
                         .img {
+                            overflow: hidden;
                             position: relative;
                             width: 100%;
                             border-radius: 8px;

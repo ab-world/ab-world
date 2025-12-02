@@ -8,6 +8,7 @@ export default function CEO(props) {
             <main className={styles.main}>
                 <div className={styles.mainSection}>
                     <h1>CEO 인사말</h1>
+                    <h2>CEO’s Greetings</h2>
 
                     <div className={styles.flexView}>
                         <div className={styles.textView}>

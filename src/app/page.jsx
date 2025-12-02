@@ -29,7 +29,7 @@ export default function Home(props) {
 
                         <div className={styles.flexView}>
                             {[
-                                { productName: 'K System ERP', image: '/erp.png', description: '표준프로세스를 바탕으로 철저한 품질 검수' },
+                                { productName: 'K-System ERP', image: '/erp.png', description: '표준프로세스를 바탕으로 철저한 품질 검수' },
                                 { productName: '플렉스튜디오', image: '/erp.png', description: '표준프로세스를 바탕으로 철저한 품질 검수' },
                                 { productName: 'AB COSMOS', image: '/erp.png', description: '표준프로세스를 바탕으로 철저한 품질 검수' }
                             ].map((productItem) => (

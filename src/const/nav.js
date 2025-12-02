@@ -8,7 +8,20 @@ export const NAV_ITEMS = [
             { label: 'AB COSMOS', url: 'https://abcosmos.com' }
         ]
     },
-    { label: '산업', url: '/industry' },
+    {
+        label: '산업',
+        url: '/industry',
+        subNavItems: [
+            { label: '제약 바이오', url: '/industry-01' },
+            { label: '의료기기', url: '/industry-02' },
+            { label: 'B2C 유통', url: '/industry-03' },
+            { label: '식품가공', url: '/industry-04' },
+            { label: '화학', url: '/industry-05' },
+            { label: '반도체장비', url: '/industry-06' },
+            { label: 'IT 서비스', url: '/industry-07' },
+            { label: '공공', url: '/industry-08' }
+        ]
+    },
     {
         label: '회사소개',
         url: '',
@@ -20,6 +33,5 @@ export const NAV_ITEMS = [
             { label: '찾아오시는 길 ', url: '/map' }
         ]
     },
-    { label: '도입문의', url: '/contact' },
-    { label: '서비스문의', url: 'https://abcosmos.com/kr/main/system/operation/pgmMetaASRequestReg' }
+    { label: '도입문의', url: '/contact' }
 ];

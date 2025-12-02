@@ -52,6 +52,7 @@
                     justify-content: center;
                     align-items: center;
                     height: 100%;
+                    margin: 0;
 
                     .navItem {
                         position: relative;
@@ -65,6 +66,10 @@
                             .subNavView {
                                 display: flex;
                             }
+                        }
+
+                        a {
+                            color: var(--foreground);
                         }
 
                         .subNavView {
@@ -94,6 +99,24 @@
                 display: flex;
                 gap: 12px;
                 justify-content: flex-end;
+
+                .asBtn {
+                    background-color: rgb(26, 128, 52);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 120px;
+                    height: 40px;
+                    border-radius: 4px;
+                    color: var(--white);
+                    font-size: 14px;
+                    font-weight: bold;
+
+                    &:hover {
+                        color: var(--white);
+                        text-decoration: none;
+                    }
+                }
 
                 .hamburgerBtn {
                     display: none;
@@ -421,6 +444,24 @@
                     display: flex;
                     gap: 8px;
                     justify-content: flex-end;
+
+                    .asBtn {
+                        background-color: rgb(26, 128, 52);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100px;
+                        height: 36px;
+                        border-radius: 4px;
+                        color: var(--white);
+                        font-size: 14px;
+                        font-weight: bold;
+
+                        &:hover {
+                            color: var(--white);
+                            text-decoration: none;
+                        }
+                    }
 
                     .hamburgerBtn {
                         display: block;

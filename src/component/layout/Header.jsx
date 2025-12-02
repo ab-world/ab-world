@@ -59,6 +59,10 @@ const Header = () => {
                     </div>
 
                     <div className={styles.rightView}>
+                        <Link className={styles.asBtn} href={'https://abcosmos.com/kr/main/system/operation/pgmMetaASRequestReg'} target="__blank">
+                            서비스문의
+                        </Link>
+
                         <button className={styles.hamburgerBtn} onClick={onClickCategoryBtn}>
                             <IconMenu2 />
                         </button>
