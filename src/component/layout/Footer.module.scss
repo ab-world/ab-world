@@ -1,0 +1,278 @@
+.container {
+    background-color: var(--background2);
+    width: 100%;
+    padding: 24px 0;
+    box-shadow: rgba(191, 173, 173, 0.07) 0px 3px 4px 0px;
+
+    .wrapper {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+
+        .footerSection {
+            display: flex;
+            justify-content: space-between;
+
+            .infoView {
+                flex: 1;
+                display: flex;
+                font-size: 13px;
+
+                .logoView {
+                    position: relative;
+                    width: 55px;
+                    height: 55px;
+                    margin-right: 16px;
+                }
+
+                .textView {
+                    div {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+
+                    p {
+                        white-space: pre-wrap;
+                    }
+
+                    span {
+                        white-space: pre;
+                    }
+
+                    .copyRight {
+                        display: block;
+                        margin-top: 8px;
+                        color: var(--darkGrey);
+                    }
+                }
+            }
+
+            .policyView {
+                user-select: none;
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+
+                a {
+                    &.privacypolicy {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .container {
+        background-color: var(--background2);
+        width: 100%;
+        padding: 20px;
+        box-shadow: rgba(191, 173, 173, 0.07) 0px 3px 4px 0px;
+
+        .wrapper {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+
+            .footerSection {
+                display: flex;
+                justify-content: space-between;
+
+                .infoView {
+                    flex: 1;
+                    display: flex;
+                    font-size: 13px;
+
+                    .logoView {
+                        position: relative;
+                        width: 55px;
+                        height: 55px;
+                        margin-right: 16px;
+                    }
+
+                    .textView {
+                        div {
+                            display: flex;
+                            flex-wrap: wrap;
+                        }
+
+                        p {
+                            white-space: pre-wrap;
+                        }
+
+                        span {
+                            white-space: pre;
+                        }
+
+                        .copyRight {
+                            display: block;
+                            margin-top: 8px;
+                            color: var(--darkGrey);
+                        }
+                    }
+                }
+
+                .policyView {
+                    user-select: none;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+
+                    a {
+                        &.privacypolicy {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        background-color: var(--background2);
+        width: 100%;
+        padding: 16px;
+        box-shadow: rgba(191, 173, 173, 0.07) 0px 3px 4px 0px;
+
+        .wrapper {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+
+            .footerSection {
+                display: flex;
+                justify-content: space-between;
+
+                .infoView {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 13px;
+
+                    .logoView {
+                        position: relative;
+                        width: 55px;
+                        height: 55px;
+                        margin-right: 16px;
+                        margin-bottom: 16px;
+                    }
+
+                    .textView {
+                        div {
+                            display: flex;
+                            flex-direction: column;
+                            flex-wrap: wrap;
+                        }
+
+                        p {
+                            white-space: pre-wrap;
+                        }
+
+                        span {
+                            display: none;
+                            white-space: pre;
+                        }
+
+                        .copyRight {
+                            display: block;
+                            margin-top: 8px;
+                            color: var(--darkGrey);
+                        }
+                    }
+                }
+
+                .policyView {
+                    user-select: none;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+
+                    a {
+                        &.privacypolicy {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        background-color: var(--background2);
+        width: 100%;
+        padding: 12px;
+        box-shadow: rgba(191, 173, 173, 0.07) 0px 3px 4px 0px;
+
+        .wrapper {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+
+            .footerSection {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .infoView {
+                    order: 2;
+                    flex: 1;
+                    display: flex;
+                    font-size: 13px;
+
+                    .logoView {
+                        position: relative;
+                        width: 40px;
+                        height: 40px;
+                        margin-right: 8px;
+                        margin-bottom: 8px;
+                    }
+
+                    .textView {
+                        font-size: 12px;
+
+                        div {
+                            display: flex;
+                            flex-wrap: wrap;
+                        }
+
+                        p {
+                            white-space: pre-wrap;
+                        }
+
+                        span {
+                            white-space: pre;
+                        }
+
+                        .copyRight {
+                            display: block;
+                            margin-top: 8px;
+                            color: var(--darkGrey);
+                        }
+                    }
+                }
+
+                .policyView {
+                    user-select: none;
+                    order: 1;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    margin-bottom: 16px;
+
+                    a {
+                        font-size: 14px;
+
+                        &.privacypolicy {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

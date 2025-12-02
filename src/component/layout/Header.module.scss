@@ -1,0 +1,437 @@
+.container {
+    user-select: none;
+    background-color: var(--background);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    padding: 16px 0;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 4px 0px;
+    z-index: 1000000;
+
+    .wrapper {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+
+        .section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .leftView {
+                flex: 1;
+
+                .imgWrapper {
+                    position: relative;
+                    overflow: hidden;
+                    width: 48px;
+                    border-radius: 8px;
+
+                    &:after {
+                        content: '';
+                        display: block;
+                        padding-bottom: 100%;
+                    }
+
+                    img {
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .centerView {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 48px;
+
+                .navList {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+
+                    .navItem {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100px;
+                        height: 100%;
+
+                        &:hover {
+                            .subNavView {
+                                display: flex;
+                            }
+                        }
+
+                        .subNavView {
+                            background-color: var(--background);
+                            position: absolute;
+                            top: 40px;
+                            left: 0;
+                            display: none;
+                            flex-direction: column;
+                            border-radius: 8px;
+                            box-shadow: 0px 5px 9px 0px rgb(0, 0, 0, 0.05);
+
+                            .subNavItem {
+                                width: 150px;
+                                padding: 16px;
+                                font-size: 14px;
+                                font-weight: 500;
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .rightView {
+                flex: 1;
+                display: flex;
+                gap: 12px;
+                justify-content: flex-end;
+
+                .hamburgerBtn {
+                    display: none;
+
+                    svg {
+                        width: 28px;
+                        height: 28px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .container {
+        user-select: none;
+        background-color: var(--background);
+        position: sticky;
+        top: 0;
+        width: 100%;
+        height: 80px;
+        padding: 12px;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 4px 0px;
+        z-index: 1000000;
+
+        .wrapper {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+
+            .section {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .leftView {
+                    flex: 1;
+
+                    .imgWrapper {
+                        position: relative;
+                        overflow: hidden;
+                        width: 50px;
+                        border-radius: 8px;
+
+                        &:after {
+                            content: '';
+                            display: block;
+                            padding-bottom: 100%;
+                        }
+
+                        img {
+                            object-fit: cover;
+                        }
+                    }
+                }
+
+                .centerView {
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .navList {
+                        display: flex;
+                        justify-content: center;
+
+                        .navItem {
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100px;
+                            height: 100%;
+
+                            &:hover {
+                                .subNavView {
+                                    display: flex;
+                                }
+                            }
+
+                            .subNavView {
+                                background-color: var(--background);
+                                position: absolute;
+                                top: 40px;
+                                left: 0;
+                                display: none;
+                                flex-direction: column;
+                                border-radius: 8px;
+                                box-shadow: 0px 5px 9px 0px rgb(0, 0, 0, 0.05);
+
+                                .subNavItem {
+                                    width: 150px;
+                                    padding: 16px;
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    text-align: left;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .rightView {
+                    flex: 1;
+                    display: flex;
+                    gap: 12px;
+                    justify-content: flex-end;
+
+                    .hamburgerBtn {
+                        display: none;
+
+                        svg {
+                            width: 28px;
+                            height: 28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        user-select: none;
+        background-color: var(--background);
+        position: sticky;
+        top: 0;
+        width: 100%;
+        height: 80px;
+        padding: 12px;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 4px 0px;
+        z-index: 1000000;
+
+        .wrapper {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+
+            .section {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .leftView {
+                    flex: 1;
+
+                    .imgWrapper {
+                        position: relative;
+                        overflow: hidden;
+                        width: 50px;
+                        border-radius: 8px;
+
+                        &:after {
+                            content: '';
+                            display: block;
+                            padding-bottom: 100%;
+                        }
+
+                        img {
+                            object-fit: cover;
+                        }
+                    }
+                }
+
+                .centerView {
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .navList {
+                        display: flex;
+                        justify-content: center;
+
+                        .navItem {
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100px;
+                            height: 100%;
+
+                            &:hover {
+                                .subNavView {
+                                    display: flex;
+                                }
+                            }
+
+                            .subNavView {
+                                background-color: var(--background);
+                                position: absolute;
+                                top: 40px;
+                                left: 0;
+                                display: none;
+                                flex-direction: column;
+                                border-radius: 8px;
+                                box-shadow: 0px 5px 9px 0px rgb(0, 0, 0, 0.05);
+
+                                .subNavItem {
+                                    width: 150px;
+                                    padding: 16px;
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    text-align: left;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .rightView {
+                    flex: 1;
+                    display: flex;
+                    gap: 12px;
+                    justify-content: flex-end;
+
+                    .hamburgerBtn {
+                        display: none;
+
+                        svg {
+                            width: 28px;
+                            height: 28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        user-select: none;
+        background-color: var(--background);
+        position: sticky;
+        top: 0;
+        width: 100%;
+        height: 64px;
+        padding: 12px;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 4px 0px;
+        z-index: 1000000;
+
+        .wrapper {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+
+            .section {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .leftView {
+                    flex: 1;
+
+                    .imgWrapper {
+                        position: relative;
+                        overflow: hidden;
+                        width: 40px;
+                        border-radius: 8px;
+
+                        &:after {
+                            content: '';
+                            display: block;
+                            padding-bottom: 100%;
+                        }
+
+                        img {
+                            object-fit: cover;
+                        }
+                    }
+                }
+
+                .centerView {
+                    overflow: auto;
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+
+                    .navList {
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+
+                        .navItem {
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100px;
+                            height: 100%;
+
+                            &:hover {
+                                .subNavView {
+                                    display: flex;
+                                }
+                            }
+
+                            .subNavView {
+                                background-color: var(--background);
+                                position: absolute;
+                                top: 40px;
+                                left: 0;
+                                display: none;
+                                flex-direction: column;
+                                border-radius: 8px;
+                                box-shadow: 0px 5px 9px 0px rgb(0, 0, 0, 0.05);
+
+                                .subNavItem {
+                                    width: 150px;
+                                    padding: 16px;
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    text-align: left;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .rightView {
+                    flex: 1;
+                    display: flex;
+                    gap: 8px;
+                    justify-content: flex-end;
+
+                    .hamburgerBtn {
+                        display: block;
+
+                        svg {
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.container {
+    .navList {
+        .navItem {
+            margin: 12px 0;
+            text-decoration: none;
+
+            & > a {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                width: fit-content;
+
+                &:hover {
+                    color: inherit;
+                    text-decoration: none;
+                }
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            .subNavView {
+                padding-left: 8px;
+
+                .subNavItem {
+                    margin: 12px 0;
+                    color: var(--foreground);
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

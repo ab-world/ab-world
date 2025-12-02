@@ -1,0 +1,72 @@
+'use client';
+import styles from './Header.module.scss';
+import React, { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import commonApi from '@/api/commonApi';
+import CategoryModal from '@/modal/CategoryModal';
+import { NAV_ITEMS } from '@/const/nav.js';
+import { IconMenu2 } from '@tabler/icons-react';
+
+const Header = () => {
+    const [categoryModal, setCategoryModal] = useState(false);
+
+    // 카테고리 버튼 click
+    const onClickCategoryBtn = (e) => {
+        e.stopPropagation();
+
+        setCategoryModal(true);
+    };
+
+    return (
+        <div className={styles.container}>
+            {categoryModal && <CategoryModal open={categoryModal} setOpen={setCategoryModal} />}
+
+            <div className={styles.wrapper}>
+                <div className={styles.section}>
+                    <div className={styles.leftView}>
+                        <div className={styles.imgWrapper}>
+                            <Link href={'/'}>
+                                <Image src="/ablogo.png" fill priority alt="ab logo" />
+                            </Link>
+                        </div>
+                    </div>
+
+                    <div className={styles.centerView}>
+                        <ul className={styles.navList}>
+                            {NAV_ITEMS.map((nav) => (
+                                <li key={nav.label} className={styles.navItem}>
+                                    <Link href={nav.url} target={nav.url.includes('http') ? '_blank' : '_self'}>
+                                        {nav.label}
+                                    </Link>
+
+                                    {nav.subNavItems?.length && (
+                                        <div className={styles.subNavView}>
+                                            <ul>
+                                                {nav.subNavItems.map((subNav) => (
+                                                    <li key={subNav.label} className={styles.subNavItem}>
+                                                        <Link href={subNav.url} target={subNav.url.includes('http') ? '_blank' : '_self'}>
+                                                            {subNav.label}
+                                                        </Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div className={styles.rightView}>
+                        <button className={styles.hamburgerBtn} onClick={onClickCategoryBtn}>
+                            <IconMenu2 />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Header;

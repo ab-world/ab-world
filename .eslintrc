@@ -1,0 +1,33 @@
+{
+    "root": true,
+    "parserOptions": {
+        "requireConfigFile": false,
+        "ecmaVersion": 2024,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "extends": ["eslint:recommended", "next", "next/core-web-vitals", "plugin:prettier/recommended"],
+    "env": {
+        "node": true,
+        "browser": true,
+        "es6": true,
+        "jest": true
+    },
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        }
+    },
+    "plugins": ["react", "prettier"],
+    "rules": {
+        "react/display-name": "off",
+        "react/no-unescaped-entities": "off",
+        "react/prop-types": "off",
+        "no-console": "warn",
+        "no-unused-vars": "warn",
+        "react/react-in-jsx-scope": "off"
+    }
+}
