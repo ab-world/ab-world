@@ -4,23 +4,23 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import commonApi from '@/api/commonApi';
-import CategoryModal from '@/modal/CategoryModal';
+import MenuModal from '@/modal/MenuModal';
 import { NAV_ITEMS } from '@/const/nav.js';
 import { IconMenu2 } from '@tabler/icons-react';
 
 const Header = () => {
-    const [categoryModal, setCategoryModal] = useState(false);
+    const [menuModal, setMenuModal] = useState(false);
 
     // 카테고리 버튼 click
-    const onClickCategoryBtn = (e) => {
+    const onClickMenuBtn = (e) => {
         e.stopPropagation();
 
-        setCategoryModal(true);
+        setMenuModal(true);
     };
 
     return (
         <div className={styles.container}>
-            {categoryModal && <CategoryModal open={categoryModal} setOpen={setCategoryModal} />}
+            {menuModal && <MenuModal open={menuModal} setOpen={setMenuModal} />}
 
             <div className={styles.wrapper}>
                 <div className={styles.section}>
@@ -63,7 +63,7 @@ const Header = () => {
                             서비스문의
                         </Link>
 
-                        <button className={styles.hamburgerBtn} onClick={onClickCategoryBtn}>
+                        <button className={styles.hamburgerBtn} onClick={onClickMenuBtn}>
                             <IconMenu2 />
                         </button>
                     </div>
