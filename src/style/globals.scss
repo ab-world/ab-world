@@ -140,13 +140,17 @@ a:hover {
     position: fixed;
     right: 30px;
     bottom: 30px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     width: 60px;
     height: 60px;
     border: 1px solid var(--grey);
     border-radius: 50%;
+
+    &.active {
+        display: flex;
+    }
 
     svg {
         width: 35px;
@@ -165,13 +169,47 @@ a:hover {
         position: fixed;
         right: 25px;
         bottom: 25px;
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         width: 50px;
         height: 50px;
         border: 1px solid var(--grey);
         border-radius: 50%;
+
+        &.active {
+            display: flex;
+        }
+
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    *:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .upBtn {
+        background-color: var(--background);
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--grey);
+        border-radius: 50%;
+
+        &.active {
+            display: flex;
+        }
 
         svg {
             width: 30px;
@@ -191,13 +229,17 @@ a:hover {
         position: fixed;
         right: 20px;
         bottom: 20px;
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         width: 40px;
         height: 40px;
         border: 1px solid var(--grey);
         border-radius: 50%;
+
+        &.active {
+            display: flex;
+        }
 
         svg {
             width: 25px;

@@ -1,6 +1,5 @@
 import styles from './Footer.module.scss';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const Footer = () => {
     return (
@@ -8,10 +7,6 @@ const Footer = () => {
             <div className={styles.wrapper}>
                 <div className={styles.footerSection}>
                     <div className={styles.infoView}>
-                        <div className={styles.logoView}>
-                            <Image src="/ablogo.png" fill priority alt="ab logo" />
-                        </div>
-
                         <div className={styles.textView}>
                             <div>
                                 <p>{`회사명 : (주)에이비  |  대표 : 류정`}</p>

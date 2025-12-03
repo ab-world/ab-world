@@ -1,11 +1,9 @@
 import styles from './MenuModal.module.scss';
 import { useState } from 'react';
-import Image from 'next/image';
-import Modal from '@/component/layout/Modal';
-import { showErrorNoti, showSuccessNoti } from '@/util/noti';
-import { IconChevronDown, IconChevronUp } from '@tabler/icons-react';
-import { NAV_ITEMS } from '@/const/nav';
 import Link from 'next/link';
+import Modal from '@/component/layout/Modal';
+import { NAV_ITEMS } from '@/const/nav';
+import { IconChevronDown, IconChevronUp } from '@tabler/icons-react';
 
 export default function MenuModal(props) {
     const { open, setOpen } = props;

@@ -8,6 +8,8 @@
         background-color: var(--background);
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 100%;
         height: 100%;
         min-height: 100vh;
@@ -15,7 +17,55 @@
         .mainSection {
             width: 100%;
             max-width: 1280px;
-            margin: 0 auto 80px;
+            margin: 80px auto;
+
+            .flexView {
+                display: flex;
+                gap: 40px;
+
+                .textView {
+                    flex: 1;
+                    padding: 40px 24px;
+                    border: 1px solid var(--border);
+                    border-radius: 8px;
+
+                    .title {
+                        font-size: 28px;
+                        font-weight: bold;
+                    }
+
+                    .contentView {
+                        margin-top: 20px;
+
+                        img {
+                            width: 30px;
+                            height: 30px;
+                        }
+
+                        div {
+                            display: flex;
+                            gap: 4px;
+                            align-items: center;
+
+                            & > svg {
+                                width: 20px;
+                                height: 20px;
+                                margin-bottom: 4px;
+                            }
+
+                            & > p {
+                                color: var(--foreground);
+                                font-size: 18px;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+
+                .mapView {
+                    flex: 1;
+                }
+            }
         }
     }
 }

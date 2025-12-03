@@ -1,0 +1,224 @@
+@media (max-width: 900px) {
+    .page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+
+        .main {
+            background-color: var(--background);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+
+            .bannerSection {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+
+                img {
+                    user-select: none;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    filter: brightness(50%);
+                }
+
+                .textBox {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 80%;
+                    z-index: 1000;
+                    color: var(--white);
+                    text-align: left;
+
+                    h1 {
+                        font-size: 36px;
+                        font-weight: bold;
+                        white-space: pre-line;
+                    }
+
+                    h2 {
+                        margin-top: 12px;
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .mainSection {
+                width: 100%;
+                max-width: 1280px;
+                margin: 80px auto;
+                padding: 0 12px;
+
+                h2 {
+                    color: var(--foreground);
+                    font-size: 28px;
+                    white-space: pre-line;
+                    word-break: keep-all;
+                    text-align: center;
+                }
+
+                .titleView {
+                    margin-top: 80px;
+
+                    h1 {
+                        color: var(--primaryMain);
+                        font-size: 40px;
+                        letter-spacing: 8;
+                        text-align: center;
+                    }
+
+                    h2 {
+                        color: var(--foreground);
+                        font-size: 16px;
+                        text-align: center;
+                    }
+                }
+
+                .lineView {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    margin-top: 40px;
+
+                    .line {
+                        background-color: var(--black);
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 1px;
+                        height: 100%;
+                    }
+
+                    .historyItem {
+                        display: flex;
+                        justify-content: flex-start;
+                        width: 100%;
+
+                        &.left {
+                            justify-content: flex-start;
+
+                            .wrapper {
+                                align-items: flex-end;
+
+                                .hLine {
+                                    right: -36px;
+                                }
+
+                                .contentView {
+                                    text-align: right;
+
+                                    p::after {
+                                        content: '';
+                                        background-color: var(--black);
+                                        position: absolute;
+                                        top: 50%;
+                                        right: -10px;
+                                        transform: translateY(-50%);
+                                        display: inline-block;
+                                        width: 4px;
+                                        height: 4px;
+                                        border-radius: 50%;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.right {
+                            justify-content: flex-end;
+
+                            .wrapper {
+                                align-items: flex-start;
+
+                                .hLine {
+                                    left: -36px;
+                                }
+
+                                .contentView {
+                                    text-align: left;
+
+                                    p::before {
+                                        content: '';
+                                        background-color: var(--black);
+                                        position: absolute;
+                                        top: 50%;
+                                        left: -10px;
+                                        transform: translateY(-50%);
+                                        display: inline-block;
+                                        width: 4px;
+                                        height: 4px;
+                                        border-radius: 50%;
+                                    }
+                                }
+                            }
+                        }
+
+                        .wrapper {
+                            display: flex;
+                            flex-direction: column;
+                            width: 50%;
+                            padding: 36px;
+
+                            .yearView {
+                                position: relative;
+
+                                .hLine {
+                                    background-color: var(--black);
+                                    position: absolute;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    width: 30px;
+                                    height: 1px;
+                                }
+
+                                .year {
+                                    font-size: 32px;
+                                }
+                            }
+
+                            .contentView {
+                                margin-top: 8px;
+                                font-size: 18px;
+
+                                p {
+                                    position: relative;
+                                    padding: 4px 0;
+                                    color: var(--foreground);
+                                    font-size: 16px;
+                                    word-break: keep-all;
+                                }
+                            }
+
+                            .img {
+                                overflow: hidden;
+                                position: relative;
+                                width: 80%;
+                                margin-top: 12px;
+                                border-radius: 8px;
+
+                                &:after {
+                                    content: '';
+                                    display: block;
+                                    padding-bottom: 60%;
+                                }
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

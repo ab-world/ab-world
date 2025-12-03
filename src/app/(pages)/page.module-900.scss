@@ -1,0 +1,251 @@
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 900px) {
+    .page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+
+        .main {
+            background-color: var(--background);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+
+            .bannerSection {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+
+                img {
+                    user-select: none;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    filter: brightness(50%);
+                }
+
+                .textBox {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 80%;
+                    z-index: 1000;
+
+                    h1 {
+                        color: var(--white);
+                        font-size: 44px;
+                        font-weight: bold;
+                        white-space: pre-line;
+                        word-break: keep-all;
+                        text-align: left;
+                    }
+
+                    h2 {
+                        color: var(--white);
+                        font-size: 16px;
+                        font-weight: bold;
+                        word-break: keep-all;
+                        text-align: left;
+
+                        &:last-child {
+                            margin-top: 20px;
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+
+            .mainSection {
+                width: 100%;
+                max-width: 1280px;
+                margin: 80px auto;
+                padding: 0 20px;
+
+                .productView {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    h2 {
+                        color: var(--foreground);
+                        font-size: 28px;
+                    }
+
+                    .flexView {
+                        display: flex;
+                        gap: 10px;
+                        align-items: stretch;
+                        width: 100%;
+                        margin-top: 32px;
+
+                        .productItem {
+                            background-color: var(--white);
+                            overflow: hidden;
+                            flex: 1;
+                            border: 0.5px solid rgba(28, 28, 28, 0.1);
+                            border-radius: 16px;
+                            box-shadow: 0 8px 16px rgba(28, 28, 28, 0.1);
+                            text-decoration: none;
+
+                            &:nth-child(1) {
+                                .productImg {
+                                    background-color: rgba(226, 252, 247, 0.8);
+                                }
+                            }
+
+                            &:nth-child(2) {
+                                .productImg {
+                                    background-color: rgba(229, 223, 254, 0.8);
+                                }
+                            }
+
+                            &:nth-child(3) {
+                                .productImg {
+                                    background-color: rgba(221, 239, 252, 0.8);
+                                }
+                            }
+
+                            .productImg {
+                                position: relative;
+                                width: 100%;
+
+                                &:after {
+                                    content: '';
+                                    display: block;
+                                    padding-bottom: 100%;
+                                }
+
+                                img {
+                                    position: absolute;
+                                    bottom: 0;
+                                    width: 100%;
+                                    height: auto;
+                                    object-fit: cover;
+                                }
+                            }
+
+                            .productName {
+                                padding: 12px 16px;
+                                color: var(--foreground);
+                                font-size: 20px;
+                                font-weight: bold;
+                                word-break: keep-all;
+                            }
+
+                            .productDesc {
+                                padding: 12px 16px;
+                                padding-top: 0;
+                                color: var(--grey);
+                                font-size: 14px;
+                                white-space: pre-line;
+                                word-break: keep-all;
+                            }
+                        }
+                    }
+                }
+
+                .philosophyView {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 80px;
+
+                    h2 {
+                        color: var(--foreground);
+                        font-size: 28px;
+                    }
+
+                    .flexView {
+                        display: flex;
+                        gap: 40px;
+                        justify-content: space-around;
+                        align-items: center;
+                        width: 90%;
+                        margin-top: 32px;
+
+                        div {
+                            flex: 1;
+
+                            .philosophyImg {
+                                position: relative;
+                                width: 100%;
+                                height: auto;
+
+                                img {
+                                    width: 100%;
+                                    height: auto;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .customerView {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 60px;
+
+                    h2 {
+                        color: var(--foreground);
+                        font-size: 28px;
+                    }
+
+                    .marqueeView {
+                        overflow: hidden;
+                        width: 100%;
+                        margin-top: 32px;
+
+                        .trackView {
+                            display: flex;
+                            gap: 30px;
+                            overflow: hidden;
+                            width: max-content;
+                            animation: marquee 25s linear infinite;
+                            will-change: transform;
+
+                            div {
+                                flex-shrink: 0;
+                                background-color: var(--background2);
+                                display: flex;
+                                gap: 12px;
+                                align-items: center;
+                                padding: 28px 32px;
+                                border-radius: 8px;
+
+                                .customerImg {
+                                    position: relative;
+                                    width: 100%;
+                                    height: auto;
+
+                                    img {
+                                        width: 100%;
+                                        height: auto;
+                                        object-fit: cover;
+                                    }
+                                }
+
+                                p {
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

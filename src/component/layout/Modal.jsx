@@ -1,5 +1,4 @@
 import styles from './Modal.module.scss';
-import { debounce } from '@/util/util';
 import { IconX } from '@tabler/icons-react';
 
 const Modal = ({ children, open, setOpen = () => {}, style = {}, childStyle = {}, title = '', buttons = [], onClickButton = () => {}, isBackBlur = false }) => {

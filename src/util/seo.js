@@ -3,7 +3,7 @@ import { META } from '@/const/seo';
 export const getMetadata = (metadataProps) => {
     const { title, description, asPath, ogImage } = metadataProps || {};
 
-    const TITLE = title ? `${title} | 반디부디` : META.title;
+    const TITLE = title ? `${title} | AB` : META.title;
     const DESCRIPTION = description || META.description;
     const PAGE_URL = asPath ? asPath : '';
     const OG_IMAGE = ogImage || META.ogImage;
