@@ -63,7 +63,17 @@ const Header = () => {
                         <ul className={styles.navList}>
                             {NAV_ITEMS.map((nav) => (
                                 <li key={nav.label} className={styles.navItem}>
-                                    <Link className={`${ACTIVE_HEADER.includes(pathname) || headerColor ? styles.active : ''}`} href={nav.url} target={nav.url.includes('http') ? '_blank' : '_self'}>
+                                    <Link
+                                        className={`${ACTIVE_HEADER.includes(pathname) || headerColor ? styles.active : ''}`}
+                                        href={nav.url}
+                                        target={nav.url.includes('http') ? '_blank' : '_self'}
+                                        onClick={(e) => {
+                                            if (nav.url == '') {
+                                                e.preventDefault();
+                                                return;
+                                            }
+                                        }}
+                                    >
                                         {nav.label}
                                     </Link>
 

@@ -36,19 +36,23 @@
                     left: 10%;
                     transform: translate(0, -50%);
                     z-index: 1000;
-                    color: var(--white);
-                    text-align: left;
 
                     h1 {
+                        color: var(--white);
                         font-size: 52px;
                         font-weight: bold;
                         white-space: pre-line;
+                        word-break: keep-all;
+                        text-align: left;
                     }
 
                     h2 {
                         margin-top: 12px;
+                        color: var(--white);
                         font-size: 28px;
                         font-weight: bold;
+                        word-break: keep-all;
+                        text-align: left;
                     }
                 }
             }

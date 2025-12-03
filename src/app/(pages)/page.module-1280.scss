@@ -48,6 +48,7 @@
                         font-size: 52px;
                         font-weight: bold;
                         white-space: pre-line;
+                        word-break: keep-all;
                         text-align: left;
                     }
 
@@ -55,6 +56,7 @@
                         color: var(--white);
                         font-size: 18px;
                         font-weight: bold;
+                        word-break: keep-all;
                         text-align: left;
 
                         &:last-child {

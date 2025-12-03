@@ -7,12 +7,8 @@ export default function About(props) {
         <div className={styles.page}>
             <main className={styles.main}>
                 <div className={styles.bannerSection}>
-                    <picture>
-                        <source srcSet="/about.jpg" media="(max-width: 900px)" />
-
-                        <Image src="/about.jpg" fill priority alt="banner sample" />
-                    </picture>
-
+                    <Image src="/about.jpg" fill priority alt="banner img" />
+                    ``
                     <div className={styles.textBox}>
                         <h1>
                             {`A company

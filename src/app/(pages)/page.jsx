@@ -24,11 +24,7 @@ export default function Home(props) {
         <div className={styles.page}>
             <main className={styles.main}>
                 <div className={styles.bannerSection}>
-                    <picture>
-                        <source srcSet="/main.jpg" media="(max-width: 900px)" />
-
-                        <Image src="/main.jpg" fill priority alt="banner sample" />
-                    </picture>
+                    <Image src="/main.jpg" fill priority alt="banner img" />
 
                     <div className={styles.textBox}>
                         <h2>우리는 일이 즐거워지게 하는 솔루션을 구축합니다.</h2>
@@ -92,7 +88,7 @@ export default function Home(props) {
                                 ].map((customerItem) => (
                                     <div key={customerItem.customerName + 'a'}>
                                         <div className={styles.customerImg}>
-                                            <Image src="/clogo.svg" width={1280} height={0}  priority alt="banner sample" />
+                                            <Image src="/clogo.svg" width={1280} height={0}  priority alt="customer img" />
                                         </div>
 
                                         <p>{customerItem.customerName}</p>
@@ -113,7 +109,7 @@ export default function Home(props) {
                                 ].map((customerItem) => (
                                     <div key={customerItem.customerName + 'b'}>
                                         <div className={styles.customerImg}>
-                                            <Image src="/clogo.svg" width={1280} height={0}  priority alt="banner sample" />
+                                            <Image src="/clogo.svg" width={1280} height={0}  priority alt="customer img" />
                                         </div>
 
                                         <p>{customerItem.customerName}</p>
