@@ -31,10 +31,10 @@ const Footer = () => {
                     </div>
 
                     <div className={styles.policyView}>
-                        <Link className={styles.privacypolicy} href={'/'}>
+                        <Link className={styles.privacypolicy} href={'/privacy'}>
                             개인정보처리방침
                         </Link>
-                        <Link href={'/'}>이메일무단수집거부</Link>
+                        <Link href={'/email'}>이메일무단수집거부</Link>
                     </div>
                 </div>
             </div>

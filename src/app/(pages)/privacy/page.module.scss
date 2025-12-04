@@ -15,7 +15,31 @@
         .mainSection {
             width: 100%;
             max-width: 1280px;
-            margin: 0 auto 80px;
+            margin: 80px auto;
+
+            .title {
+                margin-top: 80px;
+                color: var(--foreground);
+                font-size: 32px;
+                font-weight: bold;
+            }
+
+            div {
+                h3 {
+                    margin-top: 28px;
+                    color: var(--foreground);
+                    font-size: 24px;
+                    font-weight: bold;
+                }
+
+                div {
+                    margin-top: 16px;
+                    margin-left: 8px;
+                    color: var(--foreground);
+                    font-size: 16px;
+                    white-space: pre-wrap;
+                }
+            }
         }
     }
 }
@@ -38,7 +62,7 @@
             .mainSection {
                 width: 100%;
                 max-width: 1280px;
-                margin: 0 auto 80px;
+                margin: 80px auto;
                 padding: 0 12px;
             }
         }
@@ -63,7 +87,7 @@
             .mainSection {
                 width: 100%;
                 max-width: 1280px;
-                margin: 0 auto 80px;
+                margin: 80px auto;
                 padding: 0 12px;
             }
         }
@@ -88,7 +112,7 @@
             .mainSection {
                 width: 100%;
                 max-width: 1280px;
-                margin: 0 auto 40px;
+                margin: 40px auto;
                 padding: 0 12px;
             }
         }
