@@ -6,16 +6,51 @@ import { IconMapPin, IconPhone, IconBus } from '@tabler/icons-react';
 
 export default function Map(props) {
     useEffect(() => {
-        const naverMap = window.naver.maps;
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${'135ef09ec4d49d6a7ca5f3c169f26090'}&autoload=false`;
+        document.head.appendChild(script);
 
-        if (naverMap) {
-            let mapOptions = {
-                center: new naverMap.LatLng(37.3595704, 127.105399),
-                zoom: 10
-            };
+        script.addEventListener('load', () => {
+            window.kakao.maps.load(() => {
+                // 결과값 위치 좌표
+                let coords = new window.kakao.maps.LatLng(37.5596, 126.8553);
 
-            let map = new naverMap.Map('map', mapOptions);
-        }
+                // 지도를 담을 영역의 DOM 레퍼런스
+                let container = document.getElementById('map');
+
+                // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                let options = {
+                    center: coords, // 지도의 중심좌표
+                    level: 3 // 지도의 레벨(확대, 축소 정도)
+                };
+
+                let map = new window.kakao.maps.Map(container, options); // 지도 생성 및 객체 리턴
+
+                map.setCenter(coords);
+
+                // 마커
+                let content = document.createElement('div');
+                content.innerHTML = `<div class='${styles.marker}'>
+                                      <img src="/img/ablogo.png"/>
+                                     </div>
+                                    `;
+
+                content.addEventListener('click', function () {
+                    window.open('https://naver.me/IM4vqgwH');
+                });
+
+                let markerPosition = new window.kakao.maps.LatLng(37.5596, 126.8553);
+
+                let marker = new window.kakao.maps.CustomOverlay({
+                    position: markerPosition,
+                    content: content,
+                    clickable: true
+                });
+
+                marker.setMap(map);
+            });
+        });
     }, []);
 
     return (
