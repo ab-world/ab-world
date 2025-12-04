@@ -11,7 +11,7 @@ const PRODUCT = [
         url: '/k-system-erp'
     },
     {
-        productName: '플렉스튜디오',
+        productName: 'Flextudio',
         image: '/product2.png',
         description: `Asia No.1 로우코드 개발 플랫폼,\n모든 업무 솔루션을 하나로 통합하는\n맞춤형 기업용 애플리케이션을 개발할 수 있습니다.`,
         url: 'https://flextudio.com'
@@ -38,6 +38,20 @@ export default function Home(props) {
                 </div>
 
                 <div className={styles.mainSection}>
+                    <div className={styles.philosophyView}>
+                        <h2>BUSINESS PHILOSOPHY</h2>
+
+                        <div className={styles.flexView}>
+                            {[1, 2, 3, 4, 5].map((philosophyItem) => (
+                                <div key={philosophyItem}>
+                                    <div className={styles.philosophyImg}>
+                                        <Image src={`/philosophy${philosophyItem}.png`} width={1280} height={0} priority alt="philosophy img" />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
                     <div className={styles.productView}>
                         <h2>제품소개</h2>
 
@@ -51,20 +65,6 @@ export default function Home(props) {
                                     <p className={styles.productName}>{productItem.productName}</p>
                                     <p className={styles.productDesc}>{productItem.description}</p>
                                 </Link>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className={styles.philosophyView}>
-                        <h2>BUSINESS PHILOSOPHY</h2>
-
-                        <div className={styles.flexView}>
-                            {[1, 2, 3, 4, 5].map((philosophyItem) => (
-                                <div key={philosophyItem}>
-                                    <div className={styles.philosophyImg}>
-                                        <Image src={`/philosophy${philosophyItem}.png`} width={1280} height={0} priority alt="philosophy img" />
-                                    </div>
-                                </div>
                             ))}
                         </div>
                     </div>
