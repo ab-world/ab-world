@@ -35,7 +35,7 @@ export default function RightPeople(props) {
         <div className={styles.page}>
             <main className={styles.main}>
                 <div className={styles.bannerSection}>
-                    <Image src="/recruit.png" fill priority alt="banner img" />
+                    <Image src="/img/recruit/recruit.png" fill priority alt="banner img" />
 
                     <div className={styles.textBox}>
                         <h1>{`We Are Hiring`}</h1>

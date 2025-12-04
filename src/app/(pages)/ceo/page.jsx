@@ -28,7 +28,7 @@ export default function CEO(props) {
 
                         <div className={styles.imgView}>
                             <div className={styles.img}>
-                                <Image src="/ceo.jpg" fill priority alt="ceo img" />
+                                <Image src="/img/ceo/ceo.jpg" fill priority alt="ceo img" />
                             </div>
                         </div>
                     </div>

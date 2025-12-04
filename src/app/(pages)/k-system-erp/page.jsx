@@ -8,7 +8,7 @@ export default function KSystemERP(props) {
 
     useEffect(() => {
         if (divRef.current) {
-            fetch('/k-system-erp.html')
+            fetch('/html/k-system-erp.html')
                 .then((res) => res.text())
                 .then((text) => {
                     divRef.current.innerHTML = text;

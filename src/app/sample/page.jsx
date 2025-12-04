@@ -7,7 +7,7 @@ export default function Sample(props) {
     return (
         <div className={styles.page}>
             <main className={styles.main}>
-                <Image src="/ablogo.png" width={50} height={50} priority alt="ab logo" />
+                <Image src="/img/ablogo.png" width={50} height={50} priority alt="ab logo" />
 
                 <div className={styles.mainSection}>샘플</div>
             </main>

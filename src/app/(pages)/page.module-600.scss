@@ -104,18 +104,36 @@
                             &:nth-child(1) {
                                 .productImg {
                                     background-color: rgba(226, 252, 247, 0.8);
+
+                                    img {
+                                        border-top-left-radius: 8px;
+                                        border-top-right-radius: 8px;
+                                    }
                                 }
                             }
 
                             &:nth-child(2) {
                                 .productImg {
                                     background-color: rgba(229, 223, 254, 0.8);
+
+                                    img {
+                                        top: 0;
+                                        left: 0;
+                                        width: fit-content;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
                                 }
                             }
 
                             &:nth-child(3) {
                                 .productImg {
                                     background-color: rgba(221, 239, 252, 0.8);
+
+                                    img {
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                    }
                                 }
                             }
 

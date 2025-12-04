@@ -6,17 +6,17 @@ import Image from 'next/image';
 const PRODUCT = [
     {
         productName: 'K-System ERP',
-        image: '/product1.jpg',
+        image: '/img/main/product1.jpg',
         description: `직관적인 비즈니스 Practice를 필요로 하는 디지털 시대의 요구에 부합할 수 있도록 설계된 ERP 솔루션으로 국내·외 2,600여 개의 고객사가 사용하고 있는 검증된 제품입니다.`,
         url: '/k-system-erp'
     },
     {
         productName: 'Flextudio',
-        image: '/product2.png',
+        image: '/img/main/product2.jpg',
         description: `Asia No.1 로우코드 개발 플랫폼,\n모든 업무 솔루션을 하나로 통합하는\n맞춤형 기업용 애플리케이션을 개발할 수 있습니다.`,
         url: 'https://flextudio.com'
     },
-    { productName: 'COSMOS', image: '/product3.png', description: `유통 통합관리 시스템,\n판매/구매/물류 입출고관리를 쉽고 \n빠르게 업무 처리 가능합니다.`, url: 'https://abcosmos.com' }
+    { productName: 'COSMOS', image: '/img/product3.png', description: `유통 통합관리 시스템,\n판매/구매/물류 입출고관리를 쉽고 \n빠르게 업무 처리 가능합니다.`, url: 'https://abcosmos.com' }
 ];
 
 export default function Home(props) {
@@ -24,7 +24,7 @@ export default function Home(props) {
         <div className={styles.page}>
             <main className={styles.main}>
                 <div className={styles.bannerSection}>
-                    <Image src="/main.jpg" fill priority alt="banner img" />
+                    <Image src="/img/main/main2.jpg" fill priority alt="banner img" />
 
                     <div className={styles.textBox}>
                         <h2>우리는 일이 즐거워지게 하는 솔루션을 구축합니다.</h2>
@@ -45,7 +45,7 @@ export default function Home(props) {
                             {[1, 2, 3, 4, 5].map((philosophyItem) => (
                                 <div key={philosophyItem}>
                                     <div className={styles.philosophyImg}>
-                                        <Image src={`/philosophy${philosophyItem}.png`} width={1280} height={0} priority alt="philosophy img" />
+                                        <Image src={`/img/main/philosophy${philosophyItem}.png`} width={1280} height={0} priority alt="philosophy img" />
                                     </div>
                                 </div>
                             ))}
