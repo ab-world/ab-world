@@ -8,7 +8,7 @@ export default function Map(props) {
     useEffect(() => {
         const script = document.createElement('script');
         script.async = true;
-        script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${'135ef09ec4d49d6a7ca5f3c169f26090'}&autoload=false`;
+        script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${'ab90c7a68649b2f5b5a7a0d844a9de82'}&autoload=false`;
         document.head.appendChild(script);
 
         script.addEventListener('load', () => {
