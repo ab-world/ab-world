@@ -16,7 +16,7 @@ const PRODUCT = [
         description: `Asia No.1 로우코드 개발 플랫폼,\n모든 업무 솔루션을 하나로 통합하는\n맞춤형 기업용 애플리케이션을 개발할 수 있습니다.`,
         url: 'https://flextudio.com'
     },
-    { productName: 'COSMOS', image: '/img/product3.png', description: `유통 통합관리 시스템,\n판매/구매/물류 입출고관리를 쉽고 \n빠르게 업무 처리 가능합니다.`, url: 'https://abcosmos.com' }
+    { productName: 'COSMOS', image: '/img/main/product3.png', description: `유통 통합관리 시스템,\n판매/구매/물류 입출고관리를 쉽고 \n빠르게 업무 처리 가능합니다.`, url: 'https://abcosmos.com' }
 ];
 
 export default function Home(props) {
