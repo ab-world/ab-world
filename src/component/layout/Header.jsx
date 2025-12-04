@@ -57,6 +57,10 @@ const Header = () => {
                                 <Image src="/ablogo.png" fill priority alt="ab logo" />
                             </Link>
                         </div>
+
+                        <div className={styles.imgWrapper2}>
+                            <Image src="/ylwlogo.png" width={1280} height={0} priority alt="ylw logo" />
+                        </div>
                     </div>
 
                     <div className={styles.rightView}>
