@@ -29,9 +29,9 @@ export default function Home(props) {
                     <div className={styles.textBox}>
                         <h2>우리는 일이 즐거워지게 하는 솔루션을 구축합니다.</h2>
                         <h1>
-                            {`Develop
-                              The Solution With 
-                              Happy`}
+                            {`Make
+                              A Happy
+                              Workplace`}
                         </h1>
                         <h2>Above Business, Your Trustworthly Partner</h2>
                     </div>
