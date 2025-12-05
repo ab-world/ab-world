@@ -7,7 +7,7 @@ import MenuModal from '@/modal/MenuModal';
 import { NAV_ITEMS } from '@/const/nav.js';
 import { IconMenu2 } from '@tabler/icons-react';
 
-const ACTIVE_HEADER = ['/map', '/k-system-erp', '/contact'];
+const ACTIVE_HEADER = ['/map', '/k-system-erp', '/contact', '/privacy', '/email'];
 
 const Header = () => {
     const pathname = usePathname();

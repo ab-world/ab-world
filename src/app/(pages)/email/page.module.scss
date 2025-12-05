@@ -57,6 +57,23 @@
                 max-width: 1280px;
                 margin: 80px auto;
                 padding: 0 12px;
+
+                .title {
+                    margin-top: 80px;
+                    color: var(--foreground);
+                    font-size: 32px;
+                    font-weight: bold;
+                }
+
+                div {
+                    margin-top: 28px;
+
+                    h4 {
+                        color: var(--foreground);
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                }
             }
         }
     }
@@ -82,6 +99,23 @@
                 max-width: 1280px;
                 margin: 80px auto;
                 padding: 0 12px;
+
+                .title {
+                    margin-top: 80px;
+                    color: var(--foreground);
+                    font-size: 28px;
+                    font-weight: bold;
+                }
+
+                div {
+                    margin-top: 28px;
+
+                    h4 {
+                        color: var(--foreground);
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+                }
             }
         }
     }
@@ -107,6 +141,23 @@
                 max-width: 1280px;
                 margin: 40px auto;
                 padding: 0 12px;
+
+                .title {
+                    margin-top: 80px;
+                    color: var(--foreground);
+                    font-size: 28px;
+                    font-weight: bold;
+                }
+
+                div {
+                    margin-top: 28px;
+
+                    h4 {
+                        color: var(--foreground);
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+                }
             }
         }
     }
