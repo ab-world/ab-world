@@ -72,12 +72,15 @@ body {
 input,
 textarea,
 select {
+    -webkit-appearance: none; /* Safari, Chrome */
+    -moz-appearance: none; /* Firefox */
+    appearance: none; /* 표준 */
     background-color: var(--background);
     padding: 6px 8px;
     border: 1px solid var(--border);
     border-radius: 4px;
     outline: none;
-    box-shadow: none;    
+    box-shadow: none;
     color: var(--foreground);
     font-size: 16px;
 
@@ -90,7 +93,6 @@ select {
 
 input[type='radio'] {
     cursor: pointer;
-    appearance: none;
     background-color: var(--background);
     width: 15px;
     height: 15px;
