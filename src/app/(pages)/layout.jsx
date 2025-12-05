@@ -1,6 +1,7 @@
 'use client';
 import { Suspense, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
 import NotiStackProvider from '@/component/common/snackbar/NotiStackProvider';
@@ -23,7 +24,17 @@ export default function RootLayout({ children }) {
     }, [pathname]);
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+            fallback={
+                <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
+                    <Image style={{ filter: 'brightness(30%)' }} src="/img/main/main2.jpg" fill priority alt="banner img" />
+
+                    <div style={{ position: 'absolute', top: '50%', left: '25%', transform: 'translate(0, -50%)', zIndex: 1000 }}>
+                        <h2 style={{ color: 'var(--white)', fontSize: '32px', fontWeight: 'bold' }}>Above Business, Your Trustworthly Partner</h2>
+                    </div>
+                </div>
+            }
+        >
             <Provider store={store}>
                 <Header />
                 {children}
