@@ -4,6 +4,7 @@ import styles from './page.module.scss';
 import { useState } from 'react';
 import commonApi from '@/api/commonApi';
 import { showErrorNoti, showSuccessNoti } from '@/util/noti';
+import { trim } from '@/util/util';
 
 const SELECT_OPTION = [
     '이전 사용 경험',
@@ -51,12 +52,12 @@ export default function Contact(props) {
     };
 
     const onClickSendEmail = async () => {
-        if (formData.companyName == '') return showErrorNoti('회사명은 필수입력 항목입니다.');
-        if (formData.businessKind == '') return showErrorNoti('업종은 필수입력 항목입니다.');
-        if (formData.businessSize == '') return showErrorNoti('기업규모(매출액)은 필수입력 항목입니다.');
-        if (formData.managerName == '') return showErrorNoti('담당자는 필수입력 항목입니다.');
-        if (formData.contact == '') return showErrorNoti('연락처는 필수입력 항목입니다.');
-        if (formData.email == '') return showErrorNoti('이메일은 필수입력 항목입니다.');
+        if (trim(formData.companyName) == '') return showErrorNoti('회사명은 필수입력 항목입니다.');
+        if (trim(formData.businessKind == '')) return showErrorNoti('업종은 필수입력 항목입니다.');
+        if (trim(formData.businessSize == '')) return showErrorNoti('기업규모(매출액)은 필수입력 항목입니다.');
+        if (trim(formData.managerName == '')) return showErrorNoti('담당자는 필수입력 항목입니다.');
+        if (trim(formData.contact == '')) return showErrorNoti('연락처는 필수입력 항목입니다.');
+        if (trim(formData.email == '')) return showErrorNoti('이메일은 필수입력 항목입니다.');
         if (!EMAIL_REGEX.test(formData.email)) return showErrorNoti('이메일 형식이 잘못되었습니다.');
 
         if (formData.privacy == 0) return showErrorNoti('개인정보 수집 및 활용 동의는 필수입력 항목입니다.');
