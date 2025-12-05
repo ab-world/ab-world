@@ -27,11 +27,13 @@ export default function Home(props) {
                     <Image src="/img/main/main2.jpg" fill priority alt="banner img" />
 
                     <div className={styles.textBox}>
-                        <h2>우리는 일이 즐거워지게 하는 솔루션을 구축합니다.</h2>
+                        <h2>
+                            일이 즐거워지게 하는 <div className={styles.line}></div> 솔루션
+                        </h2>
                         <h1>
-                            {`Make
-                              A Happy
-                              Workplace`}
+                            {`Designing
+                              Solutions That Make
+                              Work Better`}
                         </h1>
                         <h2>Above Business, Your Trustworthly Partner</h2>
                     </div>

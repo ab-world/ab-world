@@ -48,23 +48,35 @@
 
                     h1 {
                         color: var(--white);
-                        font-size: 60px;
+                        font-size: 64px;
                         font-weight: bold;
                         white-space: pre-line;
                         word-break: keep-all;
                         text-align: left;
+                        line-height: 1.2;
                     }
 
                     h2 {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 8px;
                         color: var(--white);
                         font-size: 20px;
                         font-weight: bold;
+                        white-space: pre;
                         word-break: keep-all;
                         text-align: left;
 
                         &:last-child {
                             margin-top: 20px;
-                            font-size: 24px;
+                            font-size: 28px;
+                        }
+
+                        .line {
+                            background-color: var(--white);
+                            display: inline-block;
+                            width: 50px;
+                            height: 2px;
                         }
                     }
                 }
