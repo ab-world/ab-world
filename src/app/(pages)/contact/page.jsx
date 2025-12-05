@@ -2,6 +2,8 @@
 'use client';
 import styles from './page.module.scss';
 import { useState } from 'react';
+import { dispatch } from '@/redux/store';
+import { setLoading } from '@/redux/slices/system';
 import commonApi from '@/api/commonApi';
 import { showErrorNoti, showSuccessNoti } from '@/util/noti';
 import { trim } from '@/util/util';
@@ -63,25 +65,14 @@ export default function Contact(props) {
         if (formData.privacy == 0) return showErrorNoti('개인정보 수집 및 활용 동의는 필수입력 항목입니다.');
         if (formData.marketting == 0) return showErrorNoti('마케팅 활용 동의는 필수입력 항목입니다.');
 
-        const result = await commonApi.postApi('/api/send-email', {
-            subject: '도입문의가 접수 되었습니다. ',
-            content: `<div style="white-space:pre-wrap">
-                       1. 회사정보 
-                          - 회사명: ${formData.companyName}
-                          - 업종: ${formData.businessKind}
-                          - 기업규모(매출액): ${formData.businessSize}
-                          - 담당자: ${formData.managerName}
-                          - 연락처: ${formData.contact}
-                          - 이메일: ${formData.email}
+        dispatch(setLoading(true));
 
-                        2. 문의내용 
-                          ${formData.content}
-
-                        3. 개인정보 수집 활용에 대한 동의: Y 
-                        
-                        4. 마케팅 활용 동의에 대한 동의: Y
-                   </div>`
-        });
+        const result = await commonApi
+            .postApi('/api/send-email', {
+                subject: '도입문의가 접수 되었습니다. ',
+                content: `<div style="white-space:pre-wrap">도입문의가 접수 되었습니다.\n\n0. 유입경로: ${formData.referralSource}\n\n1. 회사정보\n  - 회사명: ${formData.companyName}\n  - 업종: ${formData.businessKind}\n  - 기업규모(매출액): ${formData.businessSize}\n  - 담당자: ${formData.managerName}\n  - 연락처: ${formData.contact}\n  - 이메일: ${formData.email}\n\n2. 문의내용\n${formData.content}\n\n3. 개인정보 수집 활용에 대한 동의: Y\n\n4. 마케팅 활용 동의에 대한 동의: Y\n\n</div>`
+            })
+            .finally(() => dispatch(setLoading(false)));
 
         if (result.code == 0) {
             showSuccessNoti('도입문의가 완료되었습니다.');

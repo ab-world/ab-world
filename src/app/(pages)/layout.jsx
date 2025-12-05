@@ -8,6 +8,7 @@ import NotiStackProvider from '@/component/common/snackbar/NotiStackProvider';
 import Header from '@/component/layout/Header';
 import Footer from '@/component/layout/Footer';
 import UpBtn from '@/component/common/UpBtn';
+import LoadingView from '@/component/layout/LoadingView';
 import { JWT_TOKEN_ID } from '@/const/variable';
 
 export default function RootLayout({ children }) {
@@ -39,6 +40,8 @@ export default function RootLayout({ children }) {
                 <Header />
                 {children}
                 <Footer />
+
+                <LoadingView />
                 {/* <UpBtn /> */}
             </Provider>
 
