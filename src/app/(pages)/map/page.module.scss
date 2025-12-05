@@ -42,26 +42,34 @@
                     .contentView {
                         margin-top: 40px;
 
-                        img {
-                            width: 30px;
-                            height: 30px;
-                        }
-
-                        div {
+                        .contentTitle {
                             display: flex;
                             gap: 4px;
                             align-items: center;
+                            margin-bottom: 16px;
 
-                            & > svg {
+                            svg {
                                 width: 20px;
                                 height: 20px;
                                 margin-bottom: 4px;
                             }
 
-                            & > p {
+                            p {
                                 color: var(--foreground);
                                 font-size: 18px;
                                 font-weight: bold;
+                            }
+                        }
+
+                        .contentFlexView {
+                            display: flex;
+                            gap: 4px;
+                            align-items: center;
+
+                            svg {
+                                width: 18x;
+                                height: 18px;
+                                margin-bottom: 4px;
                             }
                         }
                     }
@@ -148,26 +156,33 @@
                         .contentView {
                             margin-top: 40px;
 
-                            img {
-                                width: 30px;
-                                height: 30px;
-                            }
-
-                            div {
+                            .contentTitle {
                                 display: flex;
                                 gap: 4px;
                                 align-items: center;
 
-                                & > svg {
+                                svg {
                                     width: 20px;
                                     height: 20px;
                                     margin-bottom: 4px;
                                 }
 
-                                & > p {
+                                p {
                                     color: var(--foreground);
                                     font-size: 18px;
                                     font-weight: bold;
+                                }
+                            }
+
+                            .contentFlexView {
+                                display: flex;
+                                gap: 4px;
+                                align-items: center;
+
+                                svg {
+                                    width: 18x;
+                                    height: 18px;
+                                    margin-bottom: 4px;
                                 }
                             }
                         }
@@ -257,26 +272,33 @@
                         .contentView {
                             margin-top: 40px;
 
-                            img {
-                                width: 30px;
-                                height: 30px;
-                            }
-
-                            div {
+                            .contentTitle {
                                 display: flex;
                                 gap: 4px;
                                 align-items: center;
 
-                                & > svg {
+                                svg {
                                     width: 20px;
                                     height: 20px;
                                     margin-bottom: 4px;
                                 }
 
-                                & > p {
+                                p {
                                     color: var(--foreground);
                                     font-size: 18px;
                                     font-weight: bold;
+                                }
+                            }
+
+                            .contentFlexView {
+                                display: flex;
+                                gap: 4px;
+                                align-items: center;
+
+                                svg {
+                                    width: 18x;
+                                    height: 18px;
+                                    margin-bottom: 4px;
                                 }
                             }
                         }
@@ -367,26 +389,33 @@
                         .contentView {
                             margin-top: 20px;
 
-                            img {
-                                width: 30px;
-                                height: 30px;
-                            }
-
-                            div {
+                            .contentTitle {
                                 display: flex;
                                 gap: 4px;
                                 align-items: center;
 
-                                & > svg {
+                                svg {
                                     width: 20px;
                                     height: 20px;
                                     margin-bottom: 4px;
                                 }
 
-                                & > p {
+                                p {
                                     color: var(--foreground);
                                     font-size: 18px;
                                     font-weight: bold;
+                                }
+                            }
+
+                            .contentFlexView {
+                                display: flex;
+                                gap: 4px;
+                                align-items: center;
+
+                                svg {
+                                    width: 18x;
+                                    height: 18px;
+                                    margin-bottom: 4px;
                                 }
                             }
                         }

@@ -2,7 +2,9 @@
 'use client';
 import styles from './page.module.scss';
 import { useEffect } from 'react';
-import { IconMapPin, IconPhone, IconBus } from '@tabler/icons-react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { showSuccessNoti } from '@/util/noti';
+import { IconCopy, IconMapPin, IconPhone, IconBus } from '@tabler/icons-react';
 
 export default function Map(props) {
     useEffect(() => {
@@ -62,31 +64,57 @@ export default function Map(props) {
                             <h1 className={styles.title}>찾아오시는 길</h1>
 
                             <div className={styles.contentView}>
-                                <div>
+                                <div className={styles.contentTitle}>
                                     <IconMapPin />
                                     <p>주소</p>
                                 </div>
 
-                                <p>서울 강서구 화곡로68길 15, 가양아벨테크노지식산업센터 406</p>
+                                <div className={styles.contentFlexView}>
+                                    <p>서울시 강서구 화곡로68길 15, 가양아벨테크노지식산업센터 406</p>
+
+                                    <CopyToClipboard text={'서울시 강서구 화곡로68길 15, 가양아벨테크노지식산업센터 406'}>
+                                        <button onClick={() => showSuccessNoti(`복사되었습니다.`)}>
+                                            <IconCopy />
+                                        </button>
+                                    </CopyToClipboard>
+                                </div>
                             </div>
 
                             <div className={styles.contentView}>
-                                <div>
+                                <div className={styles.contentTitle}>
                                     <IconPhone />
                                     <p>연락처</p>
                                 </div>
 
-                                <p>대표번호: 070-4077-0265</p>
-                                <p>팩스: 0504-219-5292</p>
+                                <div className={styles.contentFlexView}>
+                                    <p>대표번호: 070-4077-0265</p>
+                                    <CopyToClipboard text={'070-4077-0265'}>
+                                        <button onClick={() => showSuccessNoti(`복사되었습니다.`)}>
+                                            <IconCopy />
+                                        </button>
+                                    </CopyToClipboard>
+                                </div>
+
+                                <div className={styles.contentFlexView}>
+                                    <p>팩스: 0504-219-5292</p>
+
+                                    <CopyToClipboard text={'0504-219-5292'}>
+                                        <button onClick={() => showSuccessNoti(`복사되었습니다.`)}>
+                                            <IconCopy />
+                                        </button>
+                                    </CopyToClipboard>
+                                </div>
                             </div>
 
                             <div className={styles.contentView}>
-                                <div>
+                                <div className={styles.contentTitle}>
                                     <IconBus />
                                     <p>교통수단</p>
                                 </div>
 
-                                <p>9호선 가양역 번 출구 3분 소요</p>
+                                <div className={styles.contentFlexView}>
+                                    <p>지하철 9호선 가양역 7번 출구 3분 소요</p>
+                                </div>
                             </div>
                         </div>
 
