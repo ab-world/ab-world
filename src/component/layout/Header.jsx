@@ -34,7 +34,7 @@ const Header = () => {
     };
 
     const handleScroll = () => {
-        if (window.scrollY >= window.innerHeight / 2) setHeaderColor(1);
+        if (window.scrollY >= 10) setHeaderColor(1);
         else setHeaderColor(0);
     };
 

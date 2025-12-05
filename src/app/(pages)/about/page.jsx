@@ -44,24 +44,24 @@ export default function About(props) {
                     <div className={styles.lineView}>
                         <div className={styles.line}></div>
 
-                        {HISTORY.map((historyItem, historyIndex) => (
-                            <div className={`${styles.historyItem} ${historyIndex % 2 == 0 ? styles.left : styles.right}`} key={historyItem.contents}>
+                        {HISTORY.map((item, index) => (
+                            <div className={`${styles.historyItem} ${index % 2 == 0 ? styles.left : styles.right}`} key={item.contents}>
                                 <div className={styles.wrapper}>
                                     <div className={styles.yearView}>
                                         <div className={styles.hLine} />
 
-                                        <p className={styles.year}>{historyItem.year}</p>
+                                        <p className={styles.year}>{item.year}</p>
                                     </div>
 
                                     <div className={styles.contentView}>
-                                        {historyItem.contents.map((content, index) => (
-                                            <p key={content + index}>{content}</p>
+                                        {item.contents.map((content, contentIndex) => (
+                                            <p key={content + contentIndex}>{content}</p>
                                         ))}
                                     </div>
 
-                                    {historyItem.image && (
+                                    {item.image && (
                                         <div className={styles.img}>
-                                            <Image src={historyItem.image} fill priority alt="history img" />
+                                            <Image src={item.image} fill priority alt="history img" />
                                         </div>
                                     )}
                                 </div>

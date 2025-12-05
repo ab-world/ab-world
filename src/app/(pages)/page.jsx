@@ -42,10 +42,10 @@ export default function Home(props) {
                         <h2>BUSINESS PHILOSOPHY</h2>
 
                         <div className={styles.flexView}>
-                            {[1, 2, 3, 4, 5].map((philosophyItem) => (
-                                <div key={philosophyItem}>
+                            {[1, 2, 3, 4, 5].map((item) => (
+                                <div key={item}>
                                     <div className={styles.philosophyImg}>
-                                        <Image src={`/img/main/philosophy${philosophyItem}.png`} width={1280} height={0} priority alt="philosophy img" />
+                                        <Image src={`/img/main/philosophy${item}.png`} width={1280} height={0} priority alt="philosophy img" />
                                     </div>
                                 </div>
                             ))}
@@ -56,14 +56,14 @@ export default function Home(props) {
                         <h2>제품소개</h2>
 
                         <div className={styles.flexView}>
-                            {PRODUCT.map((productItem) => (
-                                <Link key={productItem.productName} className={styles.productItem} href={productItem.url} target={productItem.url.includes('http') ? '_blank' : '_self'}>
+                            {PRODUCT.map((item) => (
+                                <Link key={item.productName} className={styles.productItem} href={item.url} target={item.url.includes('http') ? '_blank' : '_self'}>
                                     <div className={styles.productImg}>
-                                        <Image src={productItem.image} width={1280} height={0} priority alt="product img" />
+                                        <Image src={item.image} width={1280} height={0} priority alt="product img" />
                                     </div>
 
-                                    <p className={styles.productName}>{productItem.productName}</p>
-                                    <p className={styles.productDesc}>{productItem.description}</p>
+                                    <p className={styles.productName}>{item.productName}</p>
+                                    <p className={styles.productDesc}>{item.description}</p>
                                 </Link>
                             ))}
                         </div>

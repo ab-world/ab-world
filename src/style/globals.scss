@@ -66,7 +66,42 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', 'Noto Sans KR', 'notokr', sans-serif !important
+    font-family: 'Roboto', 'Noto Sans KR', 'notokr', sans-serif !important;
+}
+
+input,
+textarea,
+select {
+    background-color: var(--background);
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    outline: none;
+    color: var(--foreground);
+    font-size: 16px;
+
+    &::placeholder {
+        color: var(--grey);
+        font-size: 16px;
+        word-break: keep-all;
+    }
+}
+
+input[type='radio'] {
+    cursor: pointer;
+    appearance: none;
+    background-color: var(--background);
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+input[type='radio']:checked {
+    background-color: var(--primaryMain);
+    border: 2px solid var(--background);
+    box-shadow: 0 0 0 1px blue;
 }
 
 button:hover {
