@@ -171,7 +171,7 @@
 
                 button {
                     background-color: var(--primaryMain);
-                    width: 50%;
+                    width: 400px;
                     height: 50px;
                     border-radius: 8px;
                     color: var(--white);
@@ -358,7 +358,7 @@
 
                     button {
                         background-color: var(--primaryMain);
-                        width: 50%;
+                        width: 400px;
                         height: 50px;
                         border-radius: 8px;
                         color: var(--white);
@@ -393,7 +393,7 @@
                 padding: 0 12px;
 
                 .title {
-                    margin-top: 80px;
+                    margin-top: 60px;
                     color: var(--foreground);
                     font-size: 32px;
                     font-weight: bold;
@@ -546,7 +546,7 @@
 
                     button {
                         background-color: var(--primaryMain);
-                        width: 50%;
+                        width: 400px;
                         height: 50px;
                         border-radius: 8px;
                         color: var(--white);
@@ -577,11 +577,11 @@
             .mainSection {
                 width: 100%;
                 max-width: 1280px;
-                margin: 40px auto;
+                margin: 64px auto;
                 padding: 0 12px;
 
                 .title {
-                    margin-top: 60px;
+                    margin-top: 40px;
                     color: var(--foreground);
                     font-size: 28px;
                     font-weight: bold;

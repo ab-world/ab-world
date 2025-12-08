@@ -41,7 +41,7 @@ export default function Home(props) {
 
                 <div className={styles.mainSection}>
                     <div className={styles.philosophyView}>
-                        <h2>BUSINESS PHILOSOPHY</h2>
+                        <h2 className={styles.title}>BUSINESS PHILOSOPHY</h2>
 
                         <div className={styles.flexView}>
                             {[1, 2, 3, 4, 5].map((item) => (
@@ -55,7 +55,7 @@ export default function Home(props) {
                     </div>
 
                     <div className={styles.productView}>
-                        <h2>제품소개</h2>
+                        <h2 className={styles.title}>제품소개</h2>
 
                         <div className={styles.flexView}>
                             {PRODUCT.map((item) => (
@@ -72,7 +72,7 @@ export default function Home(props) {
                     </div>
 
                     {/* <div className={styles.customerView}>
-                        <h2>주요 고객</h2>
+                        <h2 className={styles.title}>주요 고객</h2>
 
                         <div className={styles.marqueeView}>
                             <div className={styles.trackView}>

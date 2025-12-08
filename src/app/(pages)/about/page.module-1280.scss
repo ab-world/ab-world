@@ -36,11 +36,12 @@
 
                     h1 {
                         color: var(--white);
-                        font-size: 48px;
+                        font-size: 60px;
                         font-weight: bold;
                         white-space: pre-line;
                         word-break: keep-all;
                         text-align: left;
+                        line-height: 1.2;
                     }
 
                     h2 {
@@ -58,28 +59,31 @@
                 width: 100%;
                 max-width: 1280px;
                 margin: 80px auto;
+                padding: 0 12px;
 
-                h2 {
+                .title {
                     color: var(--foreground);
-                    font-size: 28px;
+                    font-size: 36px;
+                    font-weight: bold;
                     white-space: pre-line;
                     word-break: keep-all;
                     text-align: center;
                 }
 
                 .titleView {
-                    margin-top: 80px;
+                    margin-top: 60px;
 
                     h1 {
                         color: var(--primaryMain);
                         font-size: 40px;
-                        letter-spacing: 8;
+                        letter-spacing: 12;
                         text-align: center;
                     }
 
                     h2 {
                         color: var(--foreground);
                         font-size: 16px;
+                        font-weight: bold;
                         text-align: center;
                     }
                 }
@@ -175,7 +179,7 @@
                                 .hLine {
                                     background-color: var(--black);
                                     position: absolute;
-                                    top: 50%;
+                                    top: 42%;
                                     transform: translateY(-50%);
                                     width: 30px;
                                     height: 1px;
@@ -183,6 +187,7 @@
 
                                 .year {
                                     font-size: 32px;
+                                    font-weight: bold;
                                 }
                             }
 

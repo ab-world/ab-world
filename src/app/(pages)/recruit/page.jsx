@@ -30,7 +30,7 @@ const ORGANIZATION = [
     }
 ];
 
-export default function RightPeople(props) {
+export default function Recruit(props) {
     return (
         <div className={styles.page}>
             <main className={styles.main}>
@@ -48,16 +48,17 @@ export default function RightPeople(props) {
                 </div>
 
                 <div className={styles.mainSection}>
-                    <div className={styles.titleView}>
-                        <h1>에이비의 미래를 함께 할 여러분을 기다립니다.</h1>
-                        <h2>
-                            {`구성원들의 잠재력을 마음껏 펼칠 수 있도록 최대한 지원 할 것을 약속 드리며
-                              넘치는 열정과 훌륭한 인품을 갖춘 당신을 기다립니다!`}
-                        </h2>
-                    </div>
+                    <h2 className={styles.title}>
+                        에이비의 미래를 함께 할 여러분을 기다립니다.
+                    </h2>
+
+                    <h2 className={styles.subTitle}>
+                        {`구성원들의 잠재력을 마음껏 펼칠 수 있도록 최대한 지원 할 것을 약속 드리며
+                          넘치는 열정과 훌륭한 인품을 갖춘 당신을 기다립니다!`}
+                    </h2>
 
                     <div className={styles.organizationView}>
-                        <h1 className={styles.title}>ORGANIZATION</h1>
+                        <h1>ORGANIZATION</h1>
 
                         {ORGANIZATION.map((item) => (
                             <div key={item.organizationName} className={styles.organizationItem}>
@@ -68,8 +69,8 @@ export default function RightPeople(props) {
                     </div>
 
                     <div className={styles.recruitView}>
-                        <h1 className={styles.title}>제출서류</h1>
-                        <p className={styles.content}>
+                        <h1 className={styles.recruitViewTitle}>제출서류</h1>
+                        <p className={styles.recruitViewContent}>
                             {`이력서와 자기소개서를 기본 제출해 주시기 바라며,
                              포트폴리오 또는 추가 자료 제출을 원하는 지원자께서는 기타자료도 첨부 바랍니다.
                              

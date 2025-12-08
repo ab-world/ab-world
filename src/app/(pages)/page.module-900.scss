@@ -45,7 +45,7 @@
 
                     h1 {
                         color: var(--white);
-                        font-size: 44px;
+                        font-size: 52px;
                         font-weight: bold;
                         white-space: pre-line;
                         word-break: keep-all;
@@ -60,13 +60,13 @@
                         color: var(--white);
                         font-size: 16px;
                         font-weight: bold;
-                        white-space: pre;
+                        white-space: pre-line;
                         word-break: keep-all;
                         text-align: left;
 
                         &:last-child {
-                            margin-top: 20px;
-                            font-size: 20px;
+                            margin-top: 12px;
+                            font-size: 24px;
                         }
 
                         .line {
@@ -74,6 +74,7 @@
                             display: inline-block;
                             width: 50px;
                             height: 2px;
+                            margin: 0 4px;
                         }
                     }
                 }
@@ -82,24 +83,24 @@
             .mainSection {
                 width: 100%;
                 max-width: 1280px;
-                margin: 80px auto;
-                padding: 0 20px;
+                margin: 60px auto;
+                padding: 0 12px;
+
+                .title {
+                    color: var(--foreground);
+                    font-size: 32px;
+                    font-weight: bold;
+                }
 
                 .productView {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    margin-top: 80px;
-
-                    h2 {
-                        color: var(--foreground);
-                        font-size: 28px;
-                        font-weight: bold;
-                    }
+                    margin-top: 60px;
 
                     .flexView {
                         display: flex;
-                        gap: 10px;
+                        gap: 20px;
                         align-items: stretch;
                         width: 100%;
                         margin-top: 32px;
@@ -195,22 +196,16 @@
                     flex-direction: column;
                     align-items: center;
 
-                    h2 {
-                        color: var(--foreground);
-                        font-size: 28px;
-                        font-weight: bold;
-                    }
-
                     .flexView {
                         display: flex;
-                        gap: 40px;
-                        justify-content: space-around;
+                        gap: 30px;
+                        justify-content: center;
                         align-items: center;
-                        width: 90%;
+                        width: 100%;
                         margin-top: 32px;
 
                         div {
-                            flex: 1;
+                            width: 100px;
 
                             .philosophyImg {
                                 position: relative;
@@ -232,11 +227,6 @@
                     flex-direction: column;
                     align-items: center;
                     margin-top: 60px;
-
-                    h2 {
-                        color: var(--foreground);
-                        font-size: 28px;
-                    }
 
                     .marqueeView {
                         overflow: hidden;

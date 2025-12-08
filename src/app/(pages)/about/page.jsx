@@ -31,7 +31,7 @@ export default function About(props) {
                 </div>
 
                 <div className={styles.mainSection}>
-                    <h2>
+                    <h2 className={styles.title}>
                         {`신뢰를 바탕으로 가치를 창출하고 인재를 양성하며
                           동시에 성장하여 사회에 공헌하는 기업`}
                     </h2>
