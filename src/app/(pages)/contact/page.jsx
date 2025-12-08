@@ -90,7 +90,7 @@ export default function Contact(props) {
                     <div className={styles.formView}>
                         <div className={styles.row1}>
                             <label>
-                                ERP(영림원 K-System)을 어떻게 알고 문의하게 되셨나요? <span>*</span>
+                                (주)에이비를 어떻게 알고 문의하게 되셨나요? <span>*</span>
                             </label>
                             <select
                                 className={formData.referralSource == '옵션을 선택해주세요.' ? styles.placeholder : ''}

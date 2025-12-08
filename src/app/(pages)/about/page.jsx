@@ -22,9 +22,9 @@ export default function About(props) {
 
                     <div className={styles.textBox}>
                         <h1>
-                            {`A company
-                              that works smart with autonomy and responsibility,
-                              built on trust.`}
+                            {`Work Smart
+                              With Autonomy & Responsibility,
+                              Built On Trust.`}
                         </h1>
                         <h2>신뢰를 바탕으로 자율과 책임으로 똑똑하게 일하는 회사</h2>
                     </div>

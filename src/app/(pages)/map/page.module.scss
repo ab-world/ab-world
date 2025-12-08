@@ -66,10 +66,40 @@
                             gap: 4px;
                             align-items: center;
 
+                            p {
+                                color: var(--foreground);
+                                font-size: 16px;
+                                white-space: pre-wrap;
+                                word-break: keep-all;
+                            }
+
                             svg {
-                                width: 18x;
+                                width: 18px;
                                 height: 18px;
-                                margin-bottom: 4px;
+                            }
+                        }
+
+                        .contentFlexView2 {
+                            display: flex;
+                            gap: 4px;
+                            align-items: flex-start;
+                            margin-bottom: 12px;
+
+                            .contentFlexViewTitle {
+                                flex-shrink: 0;
+                                width: 60px;
+                                color: var(--foreground);
+                                font-size: 16px;
+                                font-weight: bold;
+                                white-space: pre-wrap;
+                                word-break: keep-all;
+                            }
+
+                            .contentFlexViewContent {
+                                color: var(--foreground);
+                                font-size: 16px;
+                                white-space: pre-line;
+                                word-break: keep-all;
                             }
                         }
                     }
@@ -179,10 +209,40 @@
                                 gap: 4px;
                                 align-items: center;
 
+                                p {
+                                    color: var(--foreground);
+                                    font-size: 16px;
+                                    white-space: pre-wrap;
+                                    word-break: keep-all;
+                                }
+
                                 svg {
-                                    width: 18x;
+                                    width: 18px;
                                     height: 18px;
-                                    margin-bottom: 4px;
+                                }
+                            }
+
+                            .contentFlexView2 {
+                                display: flex;
+                                gap: 4px;
+                                align-items: flex-start;
+                                margin-bottom: 12px;
+
+                                .contentFlexViewTitle {
+                                    flex-shrink: 0;
+                                    width: 60px;
+                                    color: var(--foreground);
+                                    font-size: 16px;
+                                    font-weight: bold;
+                                    white-space: pre-wrap;
+                                    word-break: keep-all;
+                                }
+
+                                .contentFlexViewContent {
+                                    color: var(--foreground);
+                                    font-size: 16px;
+                                    white-space: pre-line;
+                                    word-break: keep-all;
                                 }
                             }
                         }
@@ -295,10 +355,40 @@
                                 gap: 4px;
                                 align-items: center;
 
+                                p {
+                                    color: var(--foreground);
+                                    font-size: 16px;
+                                    white-space: pre-wrap;
+                                    word-break: keep-all;
+                                }
+
                                 svg {
-                                    width: 18x;
+                                    width: 18px;
                                     height: 18px;
-                                    margin-bottom: 4px;
+                                }
+                            }
+
+                            .contentFlexView2 {
+                                display: flex;
+                                gap: 4px;
+                                align-items: flex-start;
+                                margin-bottom: 12px;
+
+                                .contentFlexViewTitle {
+                                    flex-shrink: 0;
+                                    width: 60px;
+                                    color: var(--foreground);
+                                    font-size: 16px;
+                                    font-weight: bold;
+                                    white-space: pre-wrap;
+                                    word-break: keep-all;
+                                }
+
+                                .contentFlexViewContent {
+                                    color: var(--foreground);
+                                    font-size: 16px;
+                                    white-space: pre-line;
+                                    word-break: keep-all;
                                 }
                             }
                         }
@@ -412,10 +502,40 @@
                                 gap: 4px;
                                 align-items: center;
 
+                                p {
+                                    color: var(--foreground);
+                                    font-size: 16px;
+                                    white-space: pre-wrap;
+                                    word-break: keep-all;
+                                }
+
                                 svg {
-                                    width: 18x;
+                                    width: 18px;
                                     height: 18px;
-                                    margin-bottom: 4px;
+                                }
+                            }
+
+                            .contentFlexView2 {
+                                display: flex;
+                                gap: 4px;
+                                align-items: flex-start;
+                                margin-bottom: 12px;
+
+                                .contentFlexViewTitle {
+                                    flex-shrink: 0;
+                                    width: 60px;
+                                    color: var(--foreground);
+                                    font-size: 16px;
+                                    font-weight: bold;
+                                    white-space: pre-wrap;
+                                    word-break: keep-all;
+                                }
+
+                                .contentFlexViewContent {
+                                    color: var(--foreground);
+                                    font-size: 16px;
+                                    white-space: pre-line;
+                                    word-break: keep-all;
                                 }
                             }
                         }
