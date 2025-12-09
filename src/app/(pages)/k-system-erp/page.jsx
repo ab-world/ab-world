@@ -57,6 +57,8 @@ export default function KSystemERP(props) {
                             }
                         });
                     });
+
+                    divRef.current.style.display = 'block';
                 });
         }
     }, [divRef]);
@@ -64,7 +66,7 @@ export default function KSystemERP(props) {
     return (
         <div className={styles.page}>
             <main className={styles.main}>
-                <div ref={divRef} />
+                <div ref={divRef} style={{ display: 'none' }} />
             </main>
         </div>
     );
