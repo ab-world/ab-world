@@ -181,7 +181,7 @@
                                 .hLine {
                                     background-color: var(--black);
                                     position: absolute;
-                                    top: 42%;
+                                    top: 50%;
                                     transform: translateY(-50%);
                                     width: 30px;
                                     height: 1px;
@@ -190,6 +190,7 @@
                                 .year {
                                     font-size: 32px;
                                     font-weight: bold;
+                                    line-height: 1;
                                 }
                             }
 
