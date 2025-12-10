@@ -5,5 +5,5 @@ export const META = {
     url: 'https://www.abworld.co.kr',
     ogImage: '/img/og_image.png',
     googleVerification: 'sjND_ZxzUAx77WdrbbrYllSgj8ri5dGfHIJYjtzpFj0',
-    naverVerification: '2d84c18451d5a767d17e8e3dd979395d0e721468'
+    naverVerification: '5e2654063336ad96337ae07f92cc6f251c306046'
 };
