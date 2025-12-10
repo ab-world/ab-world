@@ -16,6 +16,9 @@ export const getMetadata = (metadataProps) => {
         title: TITLE,
         description: DESCRIPTION,
         keywords: [...META.keyword],
+        icons: {
+            icon: '/favicon.ico'
+        },
         openGraph: {
             title: TITLE,
             description: DESCRIPTION,

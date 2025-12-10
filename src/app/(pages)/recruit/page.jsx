@@ -1,5 +1,5 @@
-// 인재상 페이지
-'use client';
+// 채용안내 페이지
+import { getMetadata } from '@/util/seo';
 import styles from './page.module.scss';
 import Image from 'next/image';
 
@@ -48,9 +48,7 @@ export default function Recruit(props) {
                 </div>
 
                 <div className={styles.mainSection}>
-                    <h2 className={styles.title}>
-                        에이비의 미래를 함께 할 여러분을 기다립니다.
-                    </h2>
+                    <h2 className={styles.title}>에이비의 미래를 함께 할 여러분을 기다립니다.</h2>
 
                     <h2 className={styles.subTitle}>
                         {`구성원들의 잠재력을 마음껏 펼칠 수 있도록 최대한 지원 할 것을 약속 드리며
@@ -82,3 +80,7 @@ export default function Recruit(props) {
         </div>
     );
 }
+
+export const generateMetadata = async ({ params }) => {
+    return getMetadata({ asPath: `/recruit` });
+};

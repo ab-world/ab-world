@@ -1,4 +1,5 @@
 // 연혁 페이지
+import { getMetadata } from '@/util/seo';
 import styles from './page.module.scss';
 import Image from 'next/image';
 
@@ -73,3 +74,7 @@ export default function About(props) {
         </div>
     );
 }
+
+export const generateMetadata = async ({ params }) => {
+    return getMetadata({ asPath: `/about` });
+};

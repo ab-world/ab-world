@@ -1,13 +1,8 @@
 // Root 레이아웃
 import '@/style/globals.scss';
+import { getMetadata } from '@/util/seo';
 
-export const metadata = {
-    title: 'Above Business Solution',
-    description: 'Above Business Solution',
-    icons: {
-        icon: '/favicon.ico'
-    }
-};
+export const metadata = getMetadata();
 
 export default function RootLayout({ children }) {
     return (

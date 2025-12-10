@@ -2,6 +2,7 @@
 import styles from './page.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
+import { getMetadata } from '@/util/seo';
 
 const PRODUCT = [
     {
@@ -125,3 +126,7 @@ export default function Home(props) {
         </div>
     );
 }
+
+export const generateMetadata = async ({ params }) => {
+    return getMetadata({ asPath: `/` });
+};
