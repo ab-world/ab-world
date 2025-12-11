@@ -1,4 +1,4 @@
-// 연혁 페이지
+// 주요연혁 페이지
 import { getMetadata } from '@/util/seo';
 import styles from './page.module.scss';
 import Image from 'next/image';
@@ -76,5 +76,5 @@ export default function About(props) {
 }
 
 export const generateMetadata = async ({ params }) => {
-    return getMetadata({ asPath: `/about` });
+    return getMetadata({ title: '주요연혁 - 에이비', asPath: `/about` });
 };

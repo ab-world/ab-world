@@ -82,5 +82,5 @@ export default function Recruit(props) {
 }
 
 export const generateMetadata = async ({ params }) => {
-    return getMetadata({ asPath: `/recruit` });
+    return getMetadata({ title: '채용안내 - 에이비', asPath: `/recruit` });
 };

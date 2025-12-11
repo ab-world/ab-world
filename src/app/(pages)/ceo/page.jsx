@@ -40,5 +40,5 @@ export default function CEO(props) {
 }
 
 export const generateMetadata = async ({ params }) => {
-    return getMetadata({ asPath: `/ceo` });
+    return getMetadata({ title: 'CEO 인사말 - 에이비', asPath: `/ceo` });
 };
