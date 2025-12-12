@@ -23,6 +23,9 @@ const nextConfig = {
                 pathname: '/**'
             }
         ]
+    },
+    experimental: {
+        optimizeCss: true
     }
 };
 

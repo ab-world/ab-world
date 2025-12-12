@@ -1,8 +1,5 @@
 // 개인정보처리방침 페이지
-'use client';
 import styles from './page.module.scss';
-import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Privacy(props) {
     return (
