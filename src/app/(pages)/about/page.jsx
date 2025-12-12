@@ -38,8 +38,8 @@ export default function About(props) {
                     </h2>
 
                     <div className={styles.titleView}>
-                        <h1>OUR STORY</h1>
-                        <h2>우리는 계속 성장하고 있습니다.</h2>
+                        <h3>OUR STORY</h3>
+                        <h4>우리는 계속 성장하고 있습니다.</h4>
                     </div>
 
                     <div className={styles.lineView}>

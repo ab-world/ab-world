@@ -56,7 +56,7 @@ export default function Recruit(props) {
                     </h2>
 
                     <div className={styles.organizationView}>
-                        <h1>ORGANIZATION</h1>
+                        <h3>ORGANIZATION</h3>
 
                         {ORGANIZATION.map((item) => (
                             <div key={item.organizationName} className={styles.organizationItem}>

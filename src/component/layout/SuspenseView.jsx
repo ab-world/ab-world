@@ -7,10 +7,10 @@ const SuspenseView = () => {
             <Image src="/img/main/main2.jpg" fill priority alt="banner img" />
 
             <div className={styles.textBox}>
-                <h1>
+                <h3>
                     {`Above Business,
                       Your Trustworthly Partner`}
-                </h1>
+                </h3>
             </div>
         </div>
     );
