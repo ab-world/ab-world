@@ -1,7 +1,7 @@
 export const META = {
     title: '에이비 - Above Business Solution',
     description: '에이비 - Above Business Solution',
-    keyword: ['(주)에이비', '에이비', 'AB', '영림원소프트랩', '영림원', '플렉스튜디오', 'Flextudio', 'WMS'],
+    keyword: ['(주)에이비', '에이비', 'AB', '영림원소프트랩', '영림원', '플렉스튜디오', 'Flextudio', 'WMS', 'ERP', '모바일 ERP', '클라우드 ERP'],
     url: 'https://www.abworld.co.kr',
     ogImage: '/img/og_image.png',
     googleVerification: 'sjND_ZxzUAx77WdrbbrYllSgj8ri5dGfHIJYjtzpFj0',
