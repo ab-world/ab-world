@@ -87,7 +87,10 @@ export default function Map(props) {
                                 </div>
 
                                 <div className={styles.contentFlexView}>
-                                    <p>대표번호: 070-4077-0265</p>
+                                    <div className={styles.contentFlexView2}>
+                                        <div className={styles.contentFlexViewTitle}>TEL</div>
+                                        <div>070-4077-0265</div>
+                                    </div>
 
                                     <CopyToClipboard text={'070-4077-0265'}>
                                         <button onClick={() => showSuccessNoti(`복사되었습니다.`)}>
@@ -97,7 +100,10 @@ export default function Map(props) {
                                 </div>
 
                                 <div className={styles.contentFlexView}>
-                                    <p>팩스: 0504-219-5292</p>
+                                    <div className={styles.contentFlexView2}>
+                                        <div className={styles.contentFlexViewTitle}>FAX</div>
+                                        <div>0504-219-5292</div>
+                                    </div>
 
                                     <CopyToClipboard text={'0504-219-5292'}>
                                         <button onClick={() => showSuccessNoti(`복사되었습니다.`)}>
@@ -113,21 +119,23 @@ export default function Map(props) {
                                     <p>교통수단</p>
                                 </div>
 
-                                <div className={styles.contentFlexView2}>
-                                    <div className={styles.contentFlexViewTitle}>지하철</div>
-
-                                    <div>9호선 가양역 7번 출구 3분 소요</div>
+                                <div className={styles.contentFlexView}>
+                                    <div className={styles.contentFlexView2}>
+                                        <div className={styles.contentFlexViewTitle}>지하철</div>
+                                        <div className={styles.contentFlexViewContent}>9호선 가양역 7번 출구 3분 소요</div>
+                                    </div>
                                 </div>
 
-                                <div className={styles.contentFlexView2}>
-                                    <div className={styles.contentFlexViewTitle}>버스</div>
-
-                                    <div className={styles.contentFlexViewContent}>
-                                        {`간선버스: 604, 605, 652, 654, 660, 672, 673
-                                          지선버스: 6627, 6632, 6633, 6642, 6715
-                                          일반버스: 60
-                                          광역버스: 7602, 8000, G6002
-                                          마을버스: 강서04, 강서05`}
+                                <div className={styles.contentFlexView}>
+                                    <div className={styles.contentFlexView2}>
+                                        <div className={styles.contentFlexViewTitle}>버스</div>
+                                        <div className={styles.contentFlexViewContent}>
+                                            {`간선버스: 604, 605, 652, 654, 660, 672, 673
+                                              지선버스: 6627, 6632, 6633, 6642, 6715
+                                              일반버스: 60
+                                              광역버스: 7602, 8000, G6002
+                                              마을버스: 강서04, 강서05`}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

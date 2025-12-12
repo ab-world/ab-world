@@ -15,6 +15,6 @@ export default function Sample(props) {
     );
 }
 
-export const generateMetadata = async ({ params: { username } }) => {
-    // return getMetadata({ title: `반짝반짝 빛날 ${username}님의 인생지도`, asPath: `/home/${username}` });
+export const generateMetadata = async ({ params }) => {
+    // return getMetadata({ asPath: `/sample` });
 };

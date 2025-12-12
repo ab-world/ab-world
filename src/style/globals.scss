@@ -72,6 +72,10 @@ body {
     -moz-osx-font-smoothing: grayscale; /* Firefox 최적화 */
 }
 
+*::selection {
+    background-color: var(--primaryLight);
+}
+
 input,
 textarea,
 select {
