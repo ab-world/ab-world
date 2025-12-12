@@ -10,7 +10,7 @@ const Modal = ({ children, open, setOpen = () => {}, style = {}, childStyle = {}
                 <div className={`${styles.modalHeader} ${title ? styles.active : ''}`}>
                     <h2>{title}</h2>
 
-                    <button onClick={() => setOpen(false)}>
+                    <button aria-label="Close" onClick={() => setOpen(false)}>
                         <IconX />
                     </button>
                 </div>
@@ -20,7 +20,7 @@ const Modal = ({ children, open, setOpen = () => {}, style = {}, childStyle = {}
                 <div className={`${styles.modalFooter} ${buttons.length ? styles.active : ''}`}>
                     {buttons.map((item, idx) => {
                         return (
-                            <button key={idx} onClick={() => onClickButton(item)}>
+                            <button aria-label="Btn" key={idx} onClick={() => onClickButton(item)}>
                                 {item}
                             </button>
                         );

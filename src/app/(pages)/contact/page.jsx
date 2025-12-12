@@ -262,7 +262,9 @@ export default function Contact(props) {
                     </div>
 
                     <div className={styles.btnView}>
-                        <button onClick={onClickSendEmail}>문의하기</button>
+                        <button aria-label="Contact" onClick={onClickSendEmail}>
+                            문의하기
+                        </button>
                     </div>
                 </div>
             </main>

@@ -6,6 +6,7 @@ const NotiStackFCMAction = (snackbarId, notification) => {
     return (
         <>
             <button
+                aria-label="RightArrow"
                 sx={{ color: (theme) => theme.palette.common.white }}
                 onClick={() => {
                     closeSnackbar(snackbarId);
@@ -16,7 +17,7 @@ const NotiStackFCMAction = (snackbarId, notification) => {
                 <IconArrowRight />
             </button>
 
-            <button sx={{ color: (theme) => theme.palette.common.white }} onClick={() => closeSnackbar(snackbarId)}>
+            <button aria-label="Close" sx={{ color: (theme) => theme.palette.common.white }} onClick={() => closeSnackbar(snackbarId)}>
                 <IconX />
             </button>
         </>

@@ -23,7 +23,7 @@ const UpBtn = () => {
     };
 
     return (
-        <button className={`upBtn ${isScrolled ? 'active' : ''}`} onClick={onClickUpBtn}>
+        <button aria-label="Up" className={`upBtn ${isScrolled ? 'active' : ''}`} onClick={onClickUpBtn}>
             <IconArrowUp />
         </button>
     );

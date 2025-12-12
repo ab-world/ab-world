@@ -98,7 +98,7 @@ const Header = () => {
                             ))}
                         </ul>
 
-                        <button className={`${styles.hamburgerBtn} ${ACTIVE_HEADER.includes(pathname) || headerColor ? styles.active : ''}`} onClick={onClickMenuBtn}>
+                        <button aria-label="Menu" className={`${styles.hamburgerBtn} ${ACTIVE_HEADER.includes(pathname) || headerColor ? styles.active : ''}`} onClick={onClickMenuBtn}>
                             <IconMenu2 />
                         </button>
                     </div>

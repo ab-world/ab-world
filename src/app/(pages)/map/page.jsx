@@ -73,7 +73,7 @@ export default function Map(props) {
                                     <p>서울시 강서구 화곡로68길 15, 가양아벨테크노지식산업센터 406</p>
 
                                     <CopyToClipboard text={'서울시 강서구 화곡로68길 15, 가양아벨테크노지식산업센터 406'}>
-                                        <button onClick={() => showSuccessNoti(`복사되었습니다.`)}>
+                                        <button aria-label="Copy Address" onClick={() => showSuccessNoti(`복사되었습니다.`)}>
                                             <IconCopy />
                                         </button>
                                     </CopyToClipboard>
@@ -93,7 +93,7 @@ export default function Map(props) {
                                     </div>
 
                                     <CopyToClipboard text={'070-4077-0265'}>
-                                        <button onClick={() => showSuccessNoti(`복사되었습니다.`)}>
+                                        <button aria-label="Copy TEL" onClick={() => showSuccessNoti(`복사되었습니다.`)}>
                                             <IconCopy />
                                         </button>
                                     </CopyToClipboard>
@@ -106,7 +106,7 @@ export default function Map(props) {
                                     </div>
 
                                     <CopyToClipboard text={'0504-219-5292'}>
-                                        <button onClick={() => showSuccessNoti(`복사되었습니다.`)}>
+                                        <button aria-label="Copy FAX" onClick={() => showSuccessNoti(`복사되었습니다.`)}>
                                             <IconCopy />
                                         </button>
                                     </CopyToClipboard>
