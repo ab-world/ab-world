@@ -23,20 +23,23 @@ const PRODUCT = [
 export default function Home(props) {
     return (
         <div className={styles.page}>
+            {/* SEO */}
+            <h1 className="sr-only">기업 맞춤 ERP·WMS 구축 및 웹·앱 개발 IT 솔루션 기업 에이비 COSMOS</h1>
+
             <main className={styles.main}>
                 <div className={styles.bannerSection}>
                     <Image src="/img/main/main2.jpg" fill priority alt="banner img" />
 
                     <div className={styles.textBox}>
-                        <h2>
+                        <h3>
                             일이 즐거워지게 하는 <div className={styles.line}></div> 솔루션
-                        </h2>
-                        <h1>
+                        </h3>
+                        <h2>
                             {`Designing
                               Solutions That Make
                               Work Better`}
-                        </h1>
-                        <h2>Above Business, Your Trustworthly Partner</h2>
+                        </h2>
+                        <h3>Above Business, Your Trustworthly Partner</h3>
                     </div>
                 </div>
 

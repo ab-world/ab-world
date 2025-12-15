@@ -61,7 +61,7 @@ export default function Map(props) {
                 <div className={styles.mainSection}>
                     <div className={styles.flexView}>
                         <div className={styles.textView}>
-                            <h1 className={styles.title}>찾아오시는 길</h1>
+                            <h2 className={styles.title}>찾아오시는 길</h2>
 
                             <div className={styles.contentView}>
                                 <div className={styles.contentTitle}>

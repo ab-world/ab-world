@@ -22,12 +22,12 @@ export default function About(props) {
                     <Image src="/img/about/about.jpg" fill priority alt="banner img" />
 
                     <div className={styles.textBox}>
-                        <h1>
+                        <h2>
                             {`Work Smart
                               With Autonomy & Responsibility,
                               Built On Trust.`}
-                        </h1>
-                        <h2>신뢰를 바탕으로 자율과 책임으로 똑똑하게 일하는 회사</h2>
+                        </h2>
+                        <h3>신뢰를 바탕으로 자율과 책임으로 똑똑하게 일하는 회사</h3>
                     </div>
                 </div>
 

@@ -38,12 +38,12 @@ export default function Recruit(props) {
                     <Image src="/img/recruit/recruit.png" fill priority alt="banner img" />
 
                     <div className={styles.textBox}>
-                        <h1>{`We Are Hiring`}</h1>
-                        <h2>
+                        <h2>{`We Are Hiring`}</h2>
+                        <h3>
                             {`에이비와 함께
                               고객기업이 경영을 더 잘하게, 최상의 솔루션을 제공해 나갈
                               훌륭한 인재를 찾습니다`}
-                        </h2>
+                        </h3>
                     </div>
                 </div>
 
@@ -67,7 +67,7 @@ export default function Recruit(props) {
                     </div>
 
                     <div className={styles.recruitView}>
-                        <h1 className={styles.recruitViewTitle}>제출서류</h1>
+                        <h2 className={styles.recruitViewTitle}>제출서류</h2>
                         <p className={styles.recruitViewContent}>
                             {`이력서와 자기소개서를 기본 제출해 주시기 바라며,
                              포트폴리오 또는 추가 자료 제출을 원하는 지원자께서는 기타자료도 첨부 바랍니다.
