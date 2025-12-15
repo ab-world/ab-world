@@ -1,19 +1,19 @@
-import styles from './SuspenseView.module.scss';
+import styles from './layout.module.scss';
 import Image from 'next/image';
 
-const SuspenseView = () => {
+const Loading = () => {
     return (
         <div className={styles.container}>
             <Image src="/img/main/main2.jpg" fill priority alt="banner img" />
 
             <div className={styles.textBox}>
-                <h3>
+                <h2>
                     {`Above Business,
                       Your Trustworthly Partner`}
-                </h3>
+                </h2>
             </div>
         </div>
     );
 };
 
-export default SuspenseView;
+export default Loading;

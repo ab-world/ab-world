@@ -1,10 +1,9 @@
 'use client';
-import { Suspense, useEffect } from 'react';
+import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
 import NotiStackProvider from '@/component/common/snackbar/NotiStackProvider';
-import SuspenseView from '@/component/layout/SuspenseView';
 import Header from '@/component/layout/Header';
 import Footer from '@/component/layout/Footer';
 import UpBtn from '@/component/common/UpBtn';
@@ -25,7 +24,7 @@ export default function RootLayout({ children }) {
     }, [pathname]);
 
     return (
-        <Suspense fallback={<SuspenseView />}>
+        <>
             <Provider store={store}>
                 <Header />
                 {children}
@@ -36,6 +35,6 @@ export default function RootLayout({ children }) {
             </Provider>
 
             <NotiStackProvider />
-        </Suspense>
+        </>
     );
 }
