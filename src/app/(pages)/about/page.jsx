@@ -76,5 +76,5 @@ export default function About(props) {
 }
 
 export const generateMetadata = async ({ params }) => {
-    return getMetadata({ title: '주요연혁 - 에이비', asPath: `/about` });
+    return getMetadata({ title: '주요연혁 - 에이비', description: `신뢰를 바탕으로 가치를 창출하고 인재를 양성하며 동시에 성장하여 사회에 공헌하는 기업`, asPath: `/about` });
 };
