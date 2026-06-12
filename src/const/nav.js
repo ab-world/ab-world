@@ -14,6 +14,7 @@ export const NAV_ITEMS = [
         url: '',
         subNavItems: [
             { label: 'K-System ERP', url: '/k-system-erp' },
+            { label: '교육센터', url: 'https://ksystemedu.co.kr' },
             { label: 'Flextudio', url: 'https://flextudio.com' },
             { label: 'COSMOS', url: 'https://abcosmos.com' }
         ]
@@ -23,8 +24,7 @@ export const NAV_ITEMS = [
         url: '',
         subNavItems: [
             { label: '도입문의', url: '/contact' },
-            { label: '서비스문의', url: 'https://abcosmos.com/kr/main/system/operation/pgmMetaASRequestReg' },
-            { label: '교육센터', url: 'https://ksystemedu.co.kr' }
+            { label: '서비스문의', url: 'https://abcosmos.com/kr/main/system/operation/pgmMetaASRequestReg' }
         ]
     }
 ];

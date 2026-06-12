@@ -1,5 +1,6 @@
 import styles from './Footer.module.scss';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Footer = () => {
     return (
@@ -18,12 +19,8 @@ const Footer = () => {
 
                             <p>{`본사 : 서울시 강서구 화곡로68길 15, 가양아벨테크노지식산업센터 406 (우)07548`}</p>
 
-                            <div>
-                                <p>{`대표전화 : 070-4077-0265  |  팩스 : 0504-219-5292`}</p>
-                                <span>{`  |  `}</span>
-                                <p>
-                                    이메일 : <a href="mailto:support@abworld.co.kr">support@abworld.co.kr</a>
-                                </p>
+                            <div className={styles.contactView}>
+                                <Image src="/img/contact.png" alt="대표전화 | 팩스 | 이메일 정보" width={700} height={40} />
                             </div>
 
                             <p className={styles.copyRight}>Copyright © AB Co.,Ltd. All Rights Reserved.</p>
