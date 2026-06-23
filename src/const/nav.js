@@ -14,7 +14,7 @@ export const NAV_ITEMS = [
         url: '',
         subNavItems: [
             { label: 'K-System ERP', url: '/k-system-erp' },
-            { label: '교육센터', url: 'https://ksystemedu.co.kr' },
+            // { label: '교육센터', url: 'https://ksystemedu.co.kr' },
             { label: 'Flextudio', url: 'https://flextudio.com' },
             { label: 'COSMOS', url: 'https://abcosmos.com' }
         ]

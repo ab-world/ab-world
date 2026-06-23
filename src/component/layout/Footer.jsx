@@ -1,8 +1,44 @@
+import { useEffect, useRef } from 'react';
 import styles from './Footer.module.scss';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const Footer = () => {
+    const canvasRef = useRef(null);
+
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        const parent = canvas.parentElement;
+
+        if (!canvas) return;
+
+        const resizeCanvas = () => {
+            canvas.width = parent.clientWidth;
+            canvas.height = 20;
+
+            const ctx = canvas.getContext('2d');
+
+            // 배경
+            ctx.fillStyle = '#F4F4F4';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.font = '12px NotoSansKR, sans-serif';
+            ctx.fillStyle = '#171717';
+            ctx.textBaseline = 'middle';
+
+            const y = canvas.height / 2;
+
+            // 전화번호, 팩스, 이메일
+            ctx.fillText('대표전화 : 070-4077-0265  |  팩스 : 0504-219-5292  |  이메일 : support@abworld.co.kr', 0, y);
+        };
+
+        resizeCanvas();
+
+        const observer = new ResizeObserver(resizeCanvas);
+        observer.observe(parent);
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <div className={styles.container}>
             <div className={styles.wrapper}>
@@ -19,9 +55,7 @@ const Footer = () => {
 
                             <p>{`본사 : 서울시 강서구 화곡로68길 15, 가양아벨테크노지식산업센터 406 (우)07548`}</p>
 
-                            <div className={styles.contactView}>
-                                <Image src="/img/contact.png" alt="대표전화 | 팩스 | 이메일 정보" width={700} height={40} />
-                            </div>
+                            <canvas ref={canvasRef} />
 
                             <p className={styles.copyRight}>Copyright © AB Co.,Ltd. All Rights Reserved.</p>
                         </div>
