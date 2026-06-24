@@ -5,6 +5,14 @@ import { useEffect } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { showSuccessNoti } from '@/util/noti';
 import { IconCopy, IconMapPin, IconPhone, IconBus } from '@tabler/icons-react';
+import CanvasArea from '@/component/common/CanvasArea';
+
+const contexts = {
+    address1: { text: '서울시 강서구 화곡로68길 15, ', fontSize: 18, fontFamily: 'NotoSansKR, sans-serif' },
+    address2: { text: '가양아벨테크노지식산업센터 406', fontSize: 18, fontFamily: 'NotoSansKR, sans-serif' },
+    tel: { text: '070-4077-0265', fontSize: 18, fontFamily: 'NotoSansKR, sans-serif' },
+    fax: { text: '0504-219-5292', fontSize: 18, fontFamily: 'NotoSansKR, sans-serif' }
+};
 
 export default function Map(props) {
     useEffect(() => {
@@ -70,13 +78,15 @@ export default function Map(props) {
                                 </div>
 
                                 <div className={styles.contentFlexView}>
-                                    <p>서울시 강서구 화곡로68길 15, 가양아벨테크노지식산업센터 406</p>
-
-                                    <CopyToClipboard text={'서울시 강서구 화곡로68길 15, 가양아벨테크노지식산업센터 406'}>
-                                        <button aria-label="Copy Address" onClick={() => showSuccessNoti(`복사되었습니다.`)}>
-                                            <IconCopy />
-                                        </button>
-                                    </CopyToClipboard>
+                                    <div className={styles.contentFlexViewAddress}>
+                                        <CanvasArea contexts={contexts['address1']} backgrund={'#ffffff'} />
+                                        <CanvasArea contexts={contexts['address2']} backgrund={'#ffffff'} />
+                                        <CopyToClipboard text={`${contexts.address1.text}${contexts.address2.text}`}>
+                                            <button aria-label="Copy Address" onClick={() => showSuccessNoti(`복사되었습니다.`)}>
+                                                <IconCopy />
+                                            </button>
+                                        </CopyToClipboard>
+                                    </div>
                                 </div>
                             </div>
 
@@ -89,10 +99,10 @@ export default function Map(props) {
                                 <div className={styles.contentFlexView}>
                                     <div className={styles.contentFlexView2}>
                                         <div className={styles.contentFlexViewTitle}>TEL</div>
-                                        <div>070-4077-0265</div>
+                                        <CanvasArea contexts={contexts['tel']} backgrund={'#ffffff'} />
                                     </div>
 
-                                    <CopyToClipboard text={'070-4077-0265'}>
+                                    <CopyToClipboard text={contexts.tel.text}>
                                         <button aria-label="Copy TEL" onClick={() => showSuccessNoti(`복사되었습니다.`)}>
                                             <IconCopy />
                                         </button>
@@ -102,10 +112,10 @@ export default function Map(props) {
                                 <div className={styles.contentFlexView}>
                                     <div className={styles.contentFlexView2}>
                                         <div className={styles.contentFlexViewTitle}>FAX</div>
-                                        <div>0504-219-5292</div>
+                                        <CanvasArea contexts={contexts['fax']} backgrund={'#ffffff'} />
                                     </div>
 
-                                    <CopyToClipboard text={'0504-219-5292'}>
+                                    <CopyToClipboard text={contexts.fax.text}>
                                         <button aria-label="Copy FAX" onClick={() => showSuccessNoti(`복사되었습니다.`)}>
                                             <IconCopy />
                                         </button>

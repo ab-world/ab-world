@@ -2,6 +2,7 @@
 import { getMetadata } from '@/util/seo';
 import styles from './page.module.scss';
 import Image from 'next/image';
+import CanvasArea from '@/component/common/CanvasArea';
 
 const ORGANIZATION = [
     {
@@ -29,6 +30,9 @@ const ORGANIZATION = [
                            B2B 글로벌 유통을 지원하기 위한 시스템과 인프라 및 플랫폼을 분석/설계 합니다.`
     }
 ];
+const context = {
+    email: { text: '인사담당 메일주소 : hr@abworld.co.kr', fontSize: 16, fontFamily: 'NotoSansKR, sans-serif' }
+};
 
 export default function Recruit(props) {
     return (
@@ -72,8 +76,9 @@ export default function Recruit(props) {
                             {`이력서와 자기소개서를 기본 제출해 주시기 바라며,
                              포트폴리오 또는 추가 자료 제출을 원하는 지원자께서는 기타자료도 첨부 바랍니다.
                              
-                             인사담당 메일주소 : hr@abworld.co.kr`}
+							 `}
                         </p>
+                        <CanvasArea contexts={context['email']} />
                     </div>
                 </div>
             </main>

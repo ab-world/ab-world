@@ -19,7 +19,12 @@
                 font-size: 13px;
 
                 .textView {
-                    div {
+                    div.divText {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+
+                    div.div2 {
                         display: flex;
                         flex-wrap: wrap;
                     }
@@ -81,7 +86,7 @@
                     font-size: 13px;
 
                     .textView {
-                        div {
+                        div.divText {
                             display: flex;
                             flex-wrap: wrap;
                         }
@@ -94,11 +99,6 @@
 
                         span {
                             white-space: pre;
-                        }
-
-                        canvas {
-                            display: block;
-                            height: 20px;
                         }
 
                         .copyRight {
@@ -150,7 +150,7 @@
                     font-size: 13px;
 
                     .textView {
-                        div {
+                        div.divText {
                             display: flex;
                             flex-direction: column;
                             flex-wrap: wrap;
@@ -219,8 +219,9 @@
                     .textView {
                         font-size: 12px;
 
-                        div {
+                        div.divText {
                             display: flex;
+							flex-direction: column;
                             flex-wrap: wrap;
                         }
 

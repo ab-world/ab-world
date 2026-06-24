@@ -63,7 +63,7 @@
                         .contentFlexView {
                             display: flex;
                             gap: 4px;
-                            align-items: flex-end;
+                            align-items: center;
                             margin-bottom: 12px;
 
                             p {
@@ -77,6 +77,13 @@
                                 width: 18px;
                                 height: 20px;
                             }
+                        }
+
+                        .contentFlexViewAddress {
+                            display: flex;
+							flex-wrap: wrap;
+                            gap: 4px;
+                            align-items: center;
                         }
 
                         .contentFlexView2 {
@@ -205,7 +212,7 @@
                             .contentFlexView {
                                 display: flex;
                                 gap: 4px;
-                                align-items: flex-end;
+                                align-items: center;
                                 margin-bottom: 12px;
 
                                 p {
@@ -350,7 +357,7 @@
                             .contentFlexView {
                                 display: flex;
                                 gap: 4px;
-                                align-items: flex-end;
+                                align-items: center;
                                 margin-bottom: 12px;
 
                                 p {
@@ -496,7 +503,7 @@
                             .contentFlexView {
                                 display: flex;
                                 gap: 4px;
-                                align-items: flex-end;
+                                align-items: center;
                                 margin-bottom: 12px;
 
                                 p {

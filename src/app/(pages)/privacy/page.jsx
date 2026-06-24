@@ -1,5 +1,11 @@
 // 개인정보처리방침 페이지
 import styles from './page.module.scss';
+import CanvasArea from '@/component/common/CanvasArea';
+
+const contexts = {
+    tel: { text: '· Tel : 070-4077-0265', fontSize: 15, fontFamily: 'NotoSansKR, sans-serif' },
+    email: { text: '· Email : support@abworld.co.kr', fontSize: 15, fontFamily: 'NotoSansKR, sans-serif' }
+};
 
 export default function Privacy(props) {
     return (
@@ -208,10 +214,10 @@ export default function Privacy(props) {
                             <br />
                             <h4>개인정보보호 책임 및 담당자</h4>
                             <br />
-                            · 홍길동
+                            · AB Support
                             <br />
-                            · Tel : 02-123-4567
-                            <br />· Email : sample@sample.co.kr
+                            <CanvasArea contexts={contexts['tel']} backgrund={'#ffffff'} />
+                            <CanvasArea contexts={contexts['email']} backgrund={'#ffffff'} />
                         </div>
                         <h3>12. 권익침해 구제방법</h3>
                         <div>
