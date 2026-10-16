@@ -8,10 +8,10 @@ import { IconCopy, IconMapPin, IconPhone, IconBus } from '@tabler/icons-react';
 import CanvasArea from '@/component/common/CanvasArea';
 
 const contexts = {
-    address1: { text: '서울시 강서구 화곡로68길 15, ', fontSize: 18, fontFamily: 'NotoSansKR, sans-serif' },
-    address2: { text: '가양아벨테크노지식산업센터 406', fontSize: 18, fontFamily: 'NotoSansKR, sans-serif' },
-    tel: { text: '070-4077-0265', fontSize: 18, fontFamily: 'NotoSansKR, sans-serif' },
-    fax: { text: '0504-219-5292', fontSize: 18, fontFamily: 'NotoSansKR, sans-serif' }
+    address1: { text: '서울시 강서구 화곡로68길 15, ', fontSize: 18 },
+    address2: { text: '가양아벨테크노지식산업센터 406', fontSize: 18 },
+    tel: { text: '070-4077-0265', fontSize: 18 },
+    fax: { text: '0504-219-5292', fontSize: 18 }
 };
 
 export default function Map(props) {

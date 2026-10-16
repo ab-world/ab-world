@@ -3,8 +3,8 @@ import styles from './page.module.scss';
 import CanvasArea from '@/component/common/CanvasArea';
 
 const contexts = {
-    tel: { text: '· Tel : 070-4077-0265', fontSize: 15, fontFamily: 'NotoSansKR, sans-serif' },
-    email: { text: '· Email : support@abworld.co.kr', fontSize: 15, fontFamily: 'NotoSansKR, sans-serif' }
+    tel: { text: '· Tel : 070-4077-0265', fontSize: 15 },
+    email: { text: '· Email : support@abworld.co.kr', fontSize: 15 }
 };
 
 export default function Privacy(props) {

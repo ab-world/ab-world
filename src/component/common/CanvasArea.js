@@ -9,31 +9,46 @@ const CanvasArea = ({ contexts, backgrund = '#F4F4F4' }) => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
-        const ctx = canvas.getContext('2d');
+        let cancelled = false;
 
-        const font = `${contexts.fontSize}px ${contexts.fontFamily}`;
+        // 페이지에 적용된 폰트(next/font)를 그대로 사용
+        const fontFamily = getComputedStyle(canvas).fontFamily;
+        const font = `${contexts.fontSize}px ${fontFamily}`;
         const text = contexts.text;
 
-        ctx.font = font;
-        const textWidth = ctx.measureText(text).width;
-        const textheight = contexts.fontSize * 1.5;
+        const draw = () => {
+            if (cancelled) return;
 
-        canvas.width = textWidth;
-        canvas.height = textheight;
+            const ctx = canvas.getContext('2d');
 
-        // 배경
-        ctx.fillStyle = backgrund;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.font = font;
+            const textWidth = ctx.measureText(text).width;
+            const textheight = contexts.fontSize * 1.5;
 
-        // 폰트
-        ctx.font = font;
-        ctx.fillStyle = '#171717';
-        ctx.textBaseline = 'middle';
+            canvas.width = textWidth;
+            canvas.height = textheight;
 
-        const y = canvas.height / 2;
+            // 배경
+            ctx.fillStyle = backgrund;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillText(text, 0, y);
-    }, [contexts]);
+            // 폰트
+            ctx.font = font;
+            ctx.fillStyle = '#171717';
+            ctx.textBaseline = 'middle';
+
+            const y = canvas.height / 2;
+
+            ctx.fillText(text, 0, y);
+        };
+
+        // canvas는 웹폰트 로딩을 기다리지 않으므로, 해당 글자의 폰트 파일을 먼저 로드
+        document.fonts.load(font, text).then(draw, draw);
+
+        return () => {
+            cancelled = true;
+        };
+    }, [contexts, backgrund]);
 
     return <canvas ref={canvasRef} style={{ width: 'min-content' }} />;
 };

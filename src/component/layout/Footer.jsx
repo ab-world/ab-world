@@ -18,11 +18,11 @@ const Footer = () => {
     }, []);
 
     const contexts = {
-        address1: { text: '본사 : 서울시 강서구 화곡로68길 15, ', fontSize: isMobile ? 12 : 13, fontFamily: 'NotoSansKR, sans-serif' },
-        address2: { text: '가양아벨테크노지식산업센터 406 (우)07548', fontSize: isMobile ? 12 : 13, fontFamily: 'NotoSansKR, sans-serif' },
-        tel: { text: '대표전화 : 070-4077-0265  |  ', fontSize: isMobile ? 12 : 13, fontFamily: 'NotoSansKR, sans-serif' },
-        fax: { text: '팩스 : 0504-219-5292  |  ', fontSize: isMobile ? 12 : 13, fontFamily: 'NotoSansKR, sans-serif' },
-        email: { text: '이메일 : support@abworld.co.kr', fontSize: isMobile ? 12 : 13, fontFamily: 'NotoSansKR, sans-serif' }
+        address1: { text: '본사 : 서울시 강서구 화곡로68길 15, ', fontSize: isMobile ? 12 : 13 },
+        address2: { text: '가양아벨테크노지식산업센터 406 (우)07548', fontSize: isMobile ? 12 : 13 },
+        tel: { text: '대표전화 : 070-4077-0265  |  ', fontSize: isMobile ? 12 : 13 },
+        fax: { text: '팩스 : 0504-219-5292  |  ', fontSize: isMobile ? 12 : 13 },
+        email: { text: '이메일 : support@abworld.co.kr', fontSize: isMobile ? 12 : 13 }
     };
 
     return (

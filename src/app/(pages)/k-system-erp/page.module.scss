@@ -9,27 +9,242 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 100%;
+        max-width: 1280px;
         min-height: 100vh;
         margin: 80px auto;
+        padding: 0 24px;
+
+        .introSection {
+            padding: 80px 0 40px;
+            text-align: center;
+
+            .eyebrow {
+                color: var(--primaryMain);
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .pageTitle {
+                margin-top: 12px;
+                color: var(--foreground);
+                font-size: 48px;
+                font-weight: bold;
+            }
+
+            .lead {
+                margin: 24px auto 0;
+                max-width: 900px;
+                color: var(--foreground);
+                font-size: 18px;
+                line-height: 1.7;
+                white-space: pre-line;
+                word-break: keep-all;
+            }
+        }
+
+        .section {
+            padding: 60px 0;
+
+            .title {
+                color: var(--foreground);
+                font-size: 32px;
+                font-weight: bold;
+                text-align: center;
+                word-break: keep-all;
+            }
+
+            .subTitle {
+                margin-top: 12px;
+                color: var(--darkGrey);
+                font-size: 17px;
+                line-height: 1.6;
+                text-align: center;
+                white-space: pre-line;
+                word-break: keep-all;
+            }
+        }
+
+        .cardGrid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+
+            .card {
+                padding: 28px 24px;
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                background-color: var(--background);
+
+                .step {
+                    display: block;
+                    margin-bottom: 8px;
+                    color: var(--primaryMain);
+                    font-size: 15px;
+                    font-weight: bold;
+                }
+
+                h3 {
+                    color: var(--foreground);
+                    font-size: 20px;
+                    font-weight: bold;
+                    word-break: keep-all;
+                }
+
+                ul {
+                    margin-top: 16px;
+                    list-style: none;
+
+                    li {
+                        position: relative;
+                        padding-left: 14px;
+                        color: var(--foreground);
+                        font-size: 15px;
+                        line-height: 1.6;
+                        word-break: keep-all;
+
+                        & + li {
+                            margin-top: 8px;
+                        }
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 10px;
+                            left: 0;
+                            width: 5px;
+                            height: 5px;
+                            border-radius: 50%;
+                            background-color: var(--primaryMain);
+                        }
+                    }
+                }
+            }
+        }
+
+        .industryGrid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 16px;
+            margin-top: 40px;
+
+            .industryItem {
+                border-radius: 12px;
+                background-color: var(--background2);
+                overflow: hidden;
+
+                h3 {
+                    padding: 14px 12px;
+                    background-color: var(--primaryMain);
+                    color: var(--white);
+                    font-size: 17px;
+                    font-weight: bold;
+                    text-align: center;
+                }
+
+                ul {
+                    padding: 16px 14px;
+                    list-style: none;
+
+                    li {
+                        color: var(--foreground);
+                        font-size: 14px;
+                        line-height: 1.5;
+                        text-align: center;
+                        word-break: keep-all;
+
+                        & + li {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .tableWrapper {
+            margin-top: 40px;
+            overflow-x: auto;
+
+            .analysisTable {
+                width: 100%;
+                min-width: 720px;
+                border-collapse: collapse;
+                font-size: 15px;
+
+                th,
+                td {
+                    padding: 14px 12px;
+                    border-bottom: 1px solid var(--border);
+                    color: var(--foreground);
+                    text-align: center;
+                    word-break: keep-all;
+                }
+
+                thead th {
+                    background-color: var(--background2);
+                    font-weight: bold;
+                }
+
+                tbody th {
+                    font-weight: bold;
+                    text-align: left;
+                }
+
+                .check {
+                    color: var(--primaryMain);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .page .main {
+        .cardGrid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .industryGrid {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 }
 
 @media (max-width: 600px) {
-    .page {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
+    .page .main {
+        margin: 64px auto;
+        padding: 0 16px;
 
-        .main {
-            background-color: var(--background);
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-            min-height: 100vh;
-            margin: 64px auto;
+        .introSection {
+            padding: 48px 0 24px;
+
+            .pageTitle {
+                font-size: 32px;
+            }
+
+            .lead {
+                font-size: 16px;
+            }
+        }
+
+        .section {
+            padding: 40px 0;
+
+            .title {
+                font-size: 24px;
+            }
+
+            .subTitle {
+                font-size: 15px;
+            }
+        }
+
+        .cardGrid {
+            grid-template-columns: 1fr;
+        }
+
+        .industryGrid {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }

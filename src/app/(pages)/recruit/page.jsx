@@ -31,7 +31,7 @@ const ORGANIZATION = [
     }
 ];
 const context = {
-    email: { text: '인사담당 메일주소 : hr@abworld.co.kr', fontSize: 16, fontFamily: 'NotoSansKR, sans-serif' }
+    email: { text: '인사담당 메일주소 : hr@abworld.co.kr', fontSize: 16 }
 };
 
 export default function Recruit(props) {
