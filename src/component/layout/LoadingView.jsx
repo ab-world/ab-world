@@ -9,7 +9,7 @@ const LoadingView = () => {
         return (
             <div className={styles.loadingView}>
                 <div className={styles.imgWrapper}>
-                    <Image src={'/img/loading.svg'} fill priority alt="loading img" />
+                    <Image src={'/img/loading.svg'} fill priority alt="로딩 중" />
                 </div>
             </div>
         );

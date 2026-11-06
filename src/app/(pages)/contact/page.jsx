@@ -85,7 +85,7 @@ export default function Contact(props) {
         <div className={styles.page}>
             <main className={styles.main}>
                 <div className={styles.mainSection}>
-                    <h2 className={styles.title}>도입문의</h2>
+                    <h1 className={styles.title}>도입문의</h1>
 
                     <div className={styles.formView}>
                         <div className={styles.row1}>

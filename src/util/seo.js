@@ -1,7 +1,7 @@
 import { META } from '@/const/seo';
 
 export const getMetadata = (metadataProps) => {
-    const { title, description, asPath, ogImage } = metadataProps || {};
+    const { title, description, asPath, ogImage, robots } = metadataProps || {};
 
     const TITLE = title ? title : META.title;
     const DESCRIPTION = description || META.description;
@@ -16,6 +16,7 @@ export const getMetadata = (metadataProps) => {
         title: TITLE,
         description: DESCRIPTION,
         keywords: [...META.keyword],
+        robots,
         icons: {
             icon: [
                 { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
@@ -30,7 +31,7 @@ export const getMetadata = (metadataProps) => {
         openGraph: {
             title: TITLE,
             description: DESCRIPTION,
-            siteName: TITLE,
+            siteName: META.siteName,
             locale: 'ko_KR',
             type: 'website',
             url: PAGE_URL,

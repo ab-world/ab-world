@@ -2,7 +2,7 @@
 import { getMetadata } from '@/util/seo';
 import styles from './page.module.scss';
 import Image from 'next/image';
-import CanvasArea from '@/component/common/CanvasArea';
+import ContactCanvas from '@/component/common/ContactCanvas';
 
 const ORGANIZATION = [
     {
@@ -30,16 +30,12 @@ const ORGANIZATION = [
                            B2B 글로벌 유통을 지원하기 위한 시스템과 인프라 및 플랫폼을 분석/설계 합니다.`
     }
 ];
-const context = {
-    email: { text: '인사담당 메일주소 : hr@abworld.co.kr', fontSize: 16 }
-};
-
 export default function Recruit(props) {
     return (
         <div className={styles.page}>
             <main className={styles.main}>
                 <div className={styles.bannerSection}>
-                    <Image src="/img/recruit/recruit.png" fill priority alt="banner img" />
+                    <Image src="/img/recruit/recruit.png" fill priority alt="" />
 
                     <div className={styles.textBox}>
                         <h2>{`We Are Hiring`}</h2>
@@ -52,7 +48,7 @@ export default function Recruit(props) {
                 </div>
 
                 <div className={styles.mainSection}>
-                    <h2 className={styles.title}>에이비의 미래를 함께 할 여러분을 기다립니다.</h2>
+                    <h1 className={styles.title}>에이비의 미래를 함께 할 여러분을 기다립니다.</h1>
 
                     <h2 className={styles.subTitle}>
                         {`구성원들의 잠재력을 마음껏 펼칠 수 있도록 최대한 지원 할 것을 약속 드리며
@@ -78,7 +74,7 @@ export default function Recruit(props) {
                              
 							 `}
                         </p>
-                        <CanvasArea contexts={context['email']} />
+                        <ContactCanvas name="recruitEmail" />
                     </div>
                 </div>
             </main>
@@ -87,5 +83,5 @@ export default function Recruit(props) {
 }
 
 export const generateMetadata = async ({ params }) => {
-    return getMetadata({ title: '채용안내 - 에이비', description: `에이비와 함께 고객기업이 경영을 더 잘하게, 최상의 솔루션을 제공해 나갈 훌륭한 인재를 찾습니다`, asPath: `/recruit` });
+    return getMetadata({ title: '채용안내 - (주)에이비', description: `(주)에이비와 함께 고객기업이 경영을 더 잘하게, 최상의 솔루션을 제공해 나갈 훌륭한 인재를 찾습니다`, asPath: `/recruit` });
 };

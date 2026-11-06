@@ -54,12 +54,12 @@ const Header = () => {
                     <div className={styles.leftView}>
                         <div className={styles.imgWrapper}>
                             <Link href={'/'}>
-                                <Image src="/img/ablogo.png" fill priority alt="ab logo" />
+                                <Image src="/img/ablogo.png" fill sizes="48px" priority alt="(주)에이비 로고" />
                             </Link>
                         </div>
 
                         <div className={styles.imgWrapper2}>
-                            <Image src="/img/ylwlogo.png" width={1280} height={0} priority alt="ylw logo" />
+                            <Image src="/img/ylwlogo.png" width={1280} height={0} sizes="150px" priority alt="영림원소프트랩 로고" />
                         </div>
                     </div>
 

@@ -19,7 +19,7 @@ export default function About(props) {
         <div className={styles.page}>
             <main className={styles.main}>
                 <div className={styles.bannerSection}>
-                    <Image src="/img/about/about.jpg" fill priority alt="banner img" />
+                    <Image src="/img/about/about.jpg" fill priority alt="" />
 
                     <div className={styles.textBox}>
                         <h2>
@@ -32,10 +32,10 @@ export default function About(props) {
                 </div>
 
                 <div className={styles.mainSection}>
-                    <h2 className={styles.title}>
+                    <h1 className={styles.title}>
                         {`신뢰를 바탕으로 가치를 창출하고 인재를 양성하며
                           동시에 성장하여 사회에 공헌하는 기업`}
-                    </h2>
+                    </h1>
 
                     <div className={styles.titleView}>
                         <h3>OUR STORY</h3>
@@ -76,5 +76,5 @@ export default function About(props) {
 }
 
 export const generateMetadata = async ({ params }) => {
-    return getMetadata({ title: '주요연혁 - 에이비', description: `신뢰를 바탕으로 가치를 창출하고 인재를 양성하며 동시에 성장하여 사회에 공헌하는 기업`, asPath: `/about` });
+    return getMetadata({ title: '주요연혁 - (주)에이비', description: `신뢰를 바탕으로 가치를 창출하고 인재를 양성하며 동시에 성장하여 사회에 공헌하는 기업`, asPath: `/about` });
 };

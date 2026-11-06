@@ -3,6 +3,7 @@ import styles from './page.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getMetadata } from '@/util/seo';
+import { JSON_LD } from '@/const/seo';
 
 const PRODUCT = [
     {
@@ -24,11 +25,12 @@ export default function Home(props) {
     return (
         <div className={styles.page}>
             {/* SEO */}
-            <h1 className="sr-only">기업 맞춤 ERP·WMS 구축 및 웹·앱 개발 IT 솔루션 기업 에이비 COSMOS</h1>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
+            <h1 className="sr-only">기업 맞춤 ERP·WMS 구축 및 웹·앱 개발 IT 솔루션 기업 (주)에이비 COSMOS</h1>
 
             <main className={styles.main}>
                 <div className={styles.bannerSection}>
-                    <Image src="/img/main/main2.jpg" fill priority alt="banner img" />
+                    <Image src="/img/main/main2.jpg" fill priority alt="" />
 
                     <div className={styles.textBox}>
                         <h3>
@@ -39,7 +41,7 @@ export default function Home(props) {
                               Solutions That Make
                               Work Better`}
                         </h2>
-                        <h3>Above Business, Your Trustworthly Partner</h3>
+                        <h3>Above Business, Your Trustworthy Partner</h3>
                     </div>
                 </div>
 
@@ -48,10 +50,10 @@ export default function Home(props) {
                         <h2 className={styles.title}>BUSINESS PHILOSOPHY</h2>
 
                         <div className={styles.flexView}>
-                            {[1, 2, 3, 4, 5].map((item) => (
+                            {['신뢰', '가치', '인재', '성장', '공헌'].map((item, index) => (
                                 <div key={item}>
                                     <div className={styles.philosophyImg}>
-                                        <Image src={`/img/main/philosophy${item}.png`} width={1280} height={0} loading="lazy" alt="philosophy img" />
+                                        <Image src={`/img/main/philosophy${index + 1}.png`} width={1280} height={0} loading="lazy" alt={item} />
                                     </div>
                                 </div>
                             ))}
@@ -65,7 +67,7 @@ export default function Home(props) {
                             {PRODUCT.map((item) => (
                                 <Link key={item.productName} className={styles.productItem} href={item.url} target={item.url.includes('http') ? '_blank' : '_self'}>
                                     <div className={styles.productImg}>
-                                        <Image src={item.image} width={1280} height={0} loading="lazy" alt="product img" />
+                                        <Image src={item.image} width={1280} height={0} loading="lazy" alt={item.productName} />
                                     </div>
 
                                     <p className={styles.productName}>{item.productName}</p>

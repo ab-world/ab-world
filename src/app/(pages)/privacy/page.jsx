@@ -1,18 +1,14 @@
 // 개인정보처리방침 페이지
 import styles from './page.module.scss';
-import CanvasArea from '@/component/common/CanvasArea';
-
-const contexts = {
-    tel: { text: '· Tel : 070-4077-0265', fontSize: 15 },
-    email: { text: '· Email : support@abworld.co.kr', fontSize: 15 }
-};
+import ContactCanvas from '@/component/common/ContactCanvas';
+import { getMetadata } from '@/util/seo';
 
 export default function Privacy(props) {
     return (
         <div className={styles.page}>
             <main className={styles.main}>
                 <div className={styles.mainSection}>
-                    <h2 className={styles.title}>개인정보처리방침</h2>
+                    <h1 className={styles.title}>개인정보처리방침</h1>
 
                     <div>
                         <h3>1. 총칙</h3>
@@ -216,8 +212,8 @@ export default function Privacy(props) {
                             <br />
                             · AB Support
                             <br />
-                            <CanvasArea contexts={contexts['tel']} backgrund={'#ffffff'} />
-                            <CanvasArea contexts={contexts['email']} backgrund={'#ffffff'} />
+                            <ContactCanvas name="privacyTel" backgrund={'#ffffff'} />
+                            <ContactCanvas name="privacyEmail" backgrund={'#ffffff'} />
                         </div>
                         <h3>12. 권익침해 구제방법</h3>
                         <div>
@@ -239,3 +235,7 @@ export default function Privacy(props) {
         </div>
     );
 }
+
+export const generateMetadata = async ({ params }) => {
+    return getMetadata({ title: '개인정보처리방침 - (주)에이비', description: `(주)에이비의 개인정보처리방침입니다. 수집하는 개인정보 항목과 이용 목적, 보유 기간, 이용자의 권리 등을 안내합니다.`, asPath: `/privacy` });
+};

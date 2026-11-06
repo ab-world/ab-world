@@ -8,7 +8,7 @@ export default function CEO(props) {
         <div className={styles.page}>
             <main className={styles.main}>
                 <div className={styles.mainSection}>
-                    <h2>CEO 인사말</h2>
+                    <h1>CEO 인사말</h1>
                     <h3>CEO’s Greetings</h3>
 
                     <div className={styles.flexView}>
@@ -29,7 +29,7 @@ export default function CEO(props) {
 
                         <div className={styles.imgView}>
                             <div className={styles.img}>
-                                <Image src="/img/ceo/ceo.jpg" fill priority alt="ceo img" />
+                                <Image src="/img/ceo/ceo.jpg" fill priority alt="(주)에이비 CEO" />
                             </div>
                         </div>
                     </div>
@@ -40,5 +40,5 @@ export default function CEO(props) {
 }
 
 export const generateMetadata = async ({ params }) => {
-    return getMetadata({ title: 'CEO 인사말 - 에이비', description: `CEO 인사말`, asPath: `/ceo` });
+    return getMetadata({ title: 'CEO 인사말 - (주)에이비', description: `(주)에이비 CEO 인사말입니다.`, asPath: `/ceo`, robots: { index: false } });
 };
