@@ -1,4 +1,4 @@
-// 도입문의 페이지
+// 데모신청 페이지
 'use client';
 import styles from './page.module.scss';
 import { useState } from 'react';
@@ -18,7 +18,7 @@ const TERMS = {
     privacy: {
         title: '개인정보 수집 활용에 대한 동의 (필수)',
         lines: [
-            '1. 개인정보의 수집 및 이용 목적 : 도입문의 상담 서비스',
+            '1. 개인정보의 수집 및 이용 목적 : 데모신청 상담 서비스',
             '2. 수집 항목 : 회사명, 담당자명, 전화번호, 이메일',
             '3. 보유기간 : 동의 철회시까지(2년마다 재동의)',
             '개인정보 수집 및 이용에 대한 동의를 거부할 권리가 있으나, 동의 거부 시 상담서비스 이용에 제한이 있을 수 있습니다.'
@@ -37,13 +37,19 @@ const TERMS = {
 
 const EMAIL_REGEX = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
 
+// 메일 본문용: 빈 값·미선택은 '-', 입력값의 HTML은 글자 그대로 보이게 이스케이프
+const mailText = (value) => {
+    if (!value || !value.trim() || value == '옵션을 선택해주세요.') return '-';
+    return value.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+};
+
 const INIT_DATA = {
-    product: '옵션을 선택해주세요.',
-    visitDemo: '',
+    product: PRODUCT_OPTION[0],
+    visitDemo: '희망',
     referralSource: '옵션을 선택해주세요.',
     companyName: '',
     businessKind: '',
-    businessSize: '',
+    userCount: '',
     managerName: '',
     contact: '',
     email: '',
@@ -65,10 +71,10 @@ export default function Contact(props) {
         if (formData.product == '옵션을 선택해주세요.') return showErrorNoti('문의 제품은 필수입력 항목입니다.');
         if (formData.visitDemo == '') return showErrorNoti('방문 데모 여부는 필수입력 항목입니다.');
         if (trim(formData.companyName) == '') return showErrorNoti('회사명은 필수입력 항목입니다.');
-        if (trim(formData.businessKind == '')) return showErrorNoti('업종은 필수입력 항목입니다.');
-        if (trim(formData.managerName == '')) return showErrorNoti('담당자는 필수입력 항목입니다.');
-        if (trim(formData.contact == '')) return showErrorNoti('연락처는 필수입력 항목입니다.');
-        if (trim(formData.email == '')) return showErrorNoti('이메일은 필수입력 항목입니다.');
+        if (trim(formData.businessKind) == '') return showErrorNoti('업종은 필수입력 항목입니다.');
+        if (trim(formData.managerName) == '') return showErrorNoti('담당자는 필수입력 항목입니다.');
+        if (trim(formData.contact) == '') return showErrorNoti('연락처는 필수입력 항목입니다.');
+        if (trim(formData.email) == '') return showErrorNoti('이메일은 필수입력 항목입니다.');
         if (!EMAIL_REGEX.test(formData.email)) return showErrorNoti('이메일 형식이 잘못되었습니다.');
 
         if (formData.privacy == 0) return showErrorNoti('개인정보 수집 및 활용 동의는 필수입력 항목입니다.');
@@ -77,19 +83,19 @@ export default function Contact(props) {
 
         const result = await commonApi
             .postApi('/api/send-email', {
-                subject: `[${formData.product}] 도입문의가 접수 되었습니다. `,
-                content: `<div style="white-space:pre-wrap">도입문의가 접수 되었습니다.\n\n문의 제품: ${formData.product} (방문 데모: ${formData.visitDemo})\n\n0. 유입경로: ${
+                subject: `[${formData.product}] 데모신청이 접수 되었습니다. `,
+                content: `<div style="white-space:pre-wrap">데모신청이 접수 되었습니다.\n\n문의 제품: ${formData.product} (방문 데모: ${formData.visitDemo})\n\n0. 유입경로: ${mailText(
                     formData.referralSource
-                }\n\n1. 회사정보\n  - 회사명: ${formData.companyName}\n  - 업종: ${formData.businessKind}\n  - 이용자수: ${formData.businessSize}\n  - 담당자: ${formData.managerName}\n  - 연락처: ${
-                    formData.contact
-                }\n  - 이메일: ${formData.email}\n\n2. 문의내용\n${formData.content}\n\n3. 개인정보 수집 활용에 대한 동의: Y\n\n4. 마케팅 활용에 대한 동의: ${
-                    formData.marketting == 1 ? 'Y' : 'N'
-                }\n\n</div>`
+                )}\n\n1. 회사정보\n  - 회사명: ${mailText(formData.companyName)}\n  - 업종: ${mailText(formData.businessKind)}\n  - 이용자수: ${mailText(formData.userCount)}\n  - 담당자: ${mailText(
+                    formData.managerName
+                )}\n  - 연락처: ${mailText(formData.contact)}\n  - 이메일: ${mailText(formData.email)}\n\n2. 문의내용\n${mailText(
+                    formData.content
+                )}\n\n3. 개인정보 수집 활용에 대한 동의: Y\n\n4. 마케팅 활용에 대한 동의: ${formData.marketting == 1 ? 'Y' : 'N'}\n\n</div>`
             })
             .finally(() => dispatch(setLoading(false)));
 
         if (result.code == 0) {
-            showSuccessNoti('도입문의가 완료되었습니다.');
+            showSuccessNoti('데모신청이 완료되었습니다.');
             setFormData(INIT_DATA);
             window.scrollTo(0, 0);
         }
@@ -101,7 +107,7 @@ export default function Contact(props) {
                 <div className={styles.mainSection}>
                     <div className={styles.flexView}>
                         <div className={styles.textView}>
-                            <h1 className={styles.title}>도입문의</h1>
+                            <h1 className={styles.title}>업무의 고민, 에이비와 상담해 보세요</h1>
 
                             <div className={styles.form}>
                                 <label className={styles.field}>
@@ -139,27 +145,6 @@ export default function Contact(props) {
                                     </div>
                                 </fieldset>
 
-                                <label className={`${styles.field} ${styles.full}`}>
-                                    <span className={styles.label}>
-                                        (주)에이비를 어떻게 알고 문의하게 되셨나요? <span>*</span>
-                                    </span>
-                                    <select
-                                        className={formData.referralSource == '옵션을 선택해주세요.' ? styles.placeholder : ''}
-                                        value={formData.referralSource}
-                                        onChange={(e) => doSetFormData({ referralSource: e.target.value })}
-                                    >
-                                        <option value={'옵션을 선택해주세요.'} disabled>
-                                            옵션을 선택해주세요.
-                                        </option>
-
-                                        {SELECT_OPTION.map((item) => (
-                                            <option key={item} value={item}>
-                                                {item}
-                                            </option>
-                                        ))}
-                                    </select>
-                                </label>
-
                                 <label className={styles.field}>
                                     <span className={styles.label}>
                                         회사명 <span>*</span>
@@ -172,11 +157,6 @@ export default function Contact(props) {
                                         업종 <span>*</span>
                                     </span>
                                     <input type="text" value={formData.businessKind} onChange={(e) => doSetFormData({ businessKind: e.target.value })} />
-                                </label>
-
-                                <label className={styles.field}>
-                                    <span className={styles.label}>이용자수</span>
-                                    <input type="text" placeholder="예: 50명" value={formData.businessSize} onChange={(e) => doSetFormData({ businessSize: e.target.value })} />
                                 </label>
 
                                 <label className={styles.field}>
@@ -198,6 +178,30 @@ export default function Contact(props) {
                                         이메일 <span>*</span>
                                     </span>
                                     <input type="email" autoComplete="email" spellCheck={false} value={formData.email} onChange={(e) => doSetFormData({ email: e.target.value })} />
+                                </label>
+
+                                <label className={styles.field}>
+                                    <span className={styles.label}>이용자수</span>
+                                    <input type="text" placeholder="예: 50명" value={formData.userCount} onChange={(e) => doSetFormData({ userCount: e.target.value })} />
+                                </label>
+
+                                <label className={`${styles.field} ${styles.full}`}>
+                                    <span className={styles.label}>(주)에이비를 어떻게 알고 문의하게 되셨나요?</span>
+                                    <select
+                                        className={formData.referralSource == '옵션을 선택해주세요.' ? styles.placeholder : ''}
+                                        value={formData.referralSource}
+                                        onChange={(e) => doSetFormData({ referralSource: e.target.value })}
+                                    >
+                                        <option value={'옵션을 선택해주세요.'} disabled>
+                                            옵션을 선택해주세요.
+                                        </option>
+
+                                        {SELECT_OPTION.map((item) => (
+                                            <option key={item} value={item}>
+                                                {item}
+                                            </option>
+                                        ))}
+                                    </select>
                                 </label>
 
                                 <label className={`${styles.field} ${styles.full}`}>
@@ -233,7 +237,7 @@ export default function Contact(props) {
 
                             <div className={styles.btnView}>
                                 <button aria-label="Contact" onClick={onClickSendEmail}>
-                                    문의하기
+                                    신청하기
                                 </button>
                             </div>
                         </div>

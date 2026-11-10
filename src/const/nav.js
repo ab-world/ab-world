@@ -23,7 +23,7 @@ export const NAV_ITEMS = [
         label: '고객센터',
         url: '',
         subNavItems: [
-            { label: '도입문의', url: '/contact' },
+            { label: '데모신청', url: '/contact' },
             { label: '서비스문의', url: 'https://abcosmos.com/kr/main/system/operation/pgmMetaASRequestReg' }
         ]
     }
