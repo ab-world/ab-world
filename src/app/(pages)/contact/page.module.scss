@@ -18,11 +18,12 @@
             flex-direction: column;
             width: 100%;
             max-width: 948px;
-            margin: 80px auto;
+            // 화면 높이 880px ~ 1240px 사이에서 여백, 행 간격, 문의내용 높이가 줄어든다
+            margin: 80px auto clamp(16px, calc(17.8vh - 140px), 80px);
             padding: 0 24px;
 
             .flexView {
-                margin-top: 80px;
+                margin-top: clamp(16px, calc(17.8vh - 140px), 80px);
 
                 .textView {
                     .title {
@@ -36,7 +37,7 @@
                     .form {
                         display: grid;
                         grid-template-columns: repeat(2, minmax(0, 1fr));
-                        gap: 26px 20px;
+                        gap: clamp(10px, calc(4.44vh - 29px), 26px) 20px;
                         margin-top: 24px;
 
                         .field {
@@ -96,7 +97,7 @@
                         }
 
                         textarea {
-                            min-height: 220px;
+                            min-height: clamp(96px, calc(34.4vh - 207px), 220px);
                             resize: vertical;
                         }
 
@@ -218,6 +219,11 @@
 
                 .form {
                     grid-template-columns: minmax(0, 1fr);
+                    gap: 26px 20px;
+
+                    textarea {
+                        min-height: 220px;
+                    }
 
                     .consent {
                         flex-wrap: wrap;
