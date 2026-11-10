@@ -7,6 +7,7 @@ import { setLoading } from '@/redux/slices/system';
 import commonApi from '@/api/commonApi';
 import { showErrorNoti, showSuccessNoti } from '@/util/noti';
 import { trim } from '@/util/util';
+import Modal from '@/component/layout/Modal';
 
 const PRODUCT_OPTION = ['COSMOS', 'K-System ERP', 'Flextudio'];
 
@@ -33,6 +34,28 @@ const SELECT_OPTION = [
     '마케팅/영업자료'
 ];
 
+// 약관보기 모달 내용
+const TERMS = {
+    privacy: {
+        title: '개인정보 수집 활용에 대한 동의 (필수)',
+        lines: [
+            '1. 개인정보의 수집 및 이용 목적 : 도입문의 상담 서비스',
+            '2. 수집 항목 : 회사명, 담당자명, 전화번호, 이메일',
+            '3. 보유기간 : 동의 철회시까지(2년마다 재동의)',
+            '개인정보 수집 및 이용에 대한 동의를 거부할 권리가 있으나, 동의 거부 시 상담서비스 이용에 제한이 있을 수 있습니다.'
+        ]
+    },
+    marketting: {
+        title: '마케팅 활용에 대한 동의 (선택)',
+        lines: [
+            '1. 수집 목적 : 제품 정보, 행사초청, 이벤트, 광고성 정보 제공 및 참여기회를 전화, 문자, 이메일로 안내',
+            '2. 수집 항목 : 회사명, 담당자명, 전화번호, 이메일',
+            '3. 보유기간 : 동의 철회시까지(2년마다 재동의)',
+            '마케팅 활용에 동의하지 않을 권리가 있으나, 동의 거부 시 제품 정보, 행사 정보 등 유익한 정보 수신에 제한이 있을 수 있습니다.'
+        ]
+    }
+};
+
 const EMAIL_REGEX = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
 
 const INIT_DATA = {
@@ -52,6 +75,8 @@ const INIT_DATA = {
 
 export default function Contact(props) {
     const [formData, setFormData] = useState(INIT_DATA);
+    // '' | privacy | marketting
+    const [terms, setTerms] = useState('');
 
     const doSetFormData = (data) => {
         setFormData((prev) => ({ ...prev, ...data }));
@@ -69,7 +94,6 @@ export default function Contact(props) {
         if (!EMAIL_REGEX.test(formData.email)) return showErrorNoti('이메일 형식이 잘못되었습니다.');
 
         if (formData.privacy == 0) return showErrorNoti('개인정보 수집 및 활용 동의는 필수입력 항목입니다.');
-        if (formData.marketting == 0) return showErrorNoti('마케팅 활용 동의는 필수입력 항목입니다.');
 
         dispatch(setLoading(true));
 
@@ -78,7 +102,7 @@ export default function Contact(props) {
         const result = await commonApi
             .postApi('/api/send-email', {
                 subject: `[${formData.product}] 도입문의가 접수 되었습니다. `,
-                content: `<div style="white-space:pre-wrap">도입문의가 접수 되었습니다.\n\n문의 제품: ${formData.product}${visitDemo}\n\n0. 유입경로: ${formData.referralSource}\n\n1. 회사정보\n  - 회사명: ${formData.companyName}\n  - 업종: ${formData.businessKind}\n  - 기업규모(매출액): ${formData.businessSize}\n  - 담당자: ${formData.managerName}\n  - 연락처: ${formData.contact}\n  - 이메일: ${formData.email}\n\n2. 문의내용\n${formData.content}\n\n3. 개인정보 수집 활용에 대한 동의: Y\n\n4. 마케팅 활용 동의에 대한 동의: Y\n\n</div>`
+                content: `<div style="white-space:pre-wrap">도입문의가 접수 되었습니다.\n\n문의 제품: ${formData.product}${visitDemo}\n\n0. 유입경로: ${formData.referralSource}\n\n1. 회사정보\n  - 회사명: ${formData.companyName}\n  - 업종: ${formData.businessKind}\n  - 기업규모(매출액): ${formData.businessSize}\n  - 담당자: ${formData.managerName}\n  - 연락처: ${formData.contact}\n  - 이메일: ${formData.email}\n\n2. 문의내용\n${formData.content}\n\n3. 개인정보 수집 활용에 대한 동의: Y\n\n4. 마케팅 활용에 대한 동의: ${formData.marketting == 1 ? 'Y' : 'N'}\n\n</div>`
             })
             .finally(() => dispatch(setLoading(false)));
 
@@ -117,23 +141,7 @@ export default function Contact(props) {
                             </select>
                         </label>
 
-                        {formData.product == 'COSMOS' && (
-                            <fieldset className={styles.field}>
-                                <legend className={styles.label}>
-                                    방문 데모 <span>*</span>
-                                </legend>
-                                <div className={styles.radioView}>
-                                    {['희망', '희망 안 함'].map((item) => (
-                                        <label key={item}>
-                                            <input type="radio" name="visitDemo" value={item} checked={formData.visitDemo == item} onChange={(e) => doSetFormData({ visitDemo: e.target.value })} />
-                                            {item}
-                                        </label>
-                                    ))}
-                                </div>
-                            </fieldset>
-                        )}
-
-                        <label className={`${styles.field} ${styles.full}`}>
+                        <label className={styles.field}>
                             <span className={styles.label}>
                                 (주)에이비를 어떻게 알고 문의하게 되셨나요? <span>*</span>
                             </span>
@@ -153,6 +161,22 @@ export default function Contact(props) {
                                 ))}
                             </select>
                         </label>
+
+                        {formData.product == 'COSMOS' && (
+                            <fieldset className={styles.field}>
+                                <legend className={styles.label}>
+                                    방문 데모 <span>*</span>
+                                </legend>
+                                <div className={styles.radioView}>
+                                    {['희망', '희망 안 함'].map((item) => (
+                                        <label key={item}>
+                                            <input type="radio" name="visitDemo" value={item} checked={formData.visitDemo == item} onChange={(e) => doSetFormData({ visitDemo: e.target.value })} />
+                                            {item}
+                                        </label>
+                                    ))}
+                                </div>
+                            </fieldset>
+                        )}
 
                         <label className={styles.field}>
                             <span className={styles.label}>
@@ -199,7 +223,7 @@ export default function Contact(props) {
                         <label className={`${styles.field} ${styles.full}`}>
                             <span className={styles.label}>문의내용</span>
                             <textarea
-                                rows={6}
+                                rows={3}
                                 placeholder="회사 소재 지역(ex. 서울/경기도 등) 및 상세 문의사항을 남겨주십시오."
                                 value={formData.content}
                                 onChange={(e) => doSetFormData({ content: e.target.value })}
@@ -207,31 +231,23 @@ export default function Contact(props) {
                         </label>
 
                         <div className={styles.consent}>
-                            <strong>
-                                개인정보 수집 활용에 대한 동의 <span>(필수)</span>
-                            </strong>
-                            <p>1. 개인정보의 수집 및 이용 목적 : 도입문의 상담 서비스</p>
-                            <p>2. 수집 항목 : 회사명, 담당자명, 전화번호, 이메일</p>
-                            <p>3. 보유기간 : 동의 철회시까지(2년마다 재동의)</p>
-                            <p>개인정보 수집 및 이용에 대한 동의를 거부할 권리가 있으나, 동의 거부 시 상담서비스 이용에 제한이 있을 수 있습니다.</p>
                             <label>
                                 <input type="checkbox" checked={formData.privacy == 1} onChange={(e) => doSetFormData({ privacy: e.target.checked ? 1 : 0 })} />
-                                개인정보 수집 및 이용에 동의합니다.
+                                개인정보 수집 및 이용에 동의합니다. <span>(필수)</span>
                             </label>
+                            <button type="button" onClick={() => setTerms('privacy')}>
+                                약관보기
+                            </button>
                         </div>
 
                         <div className={styles.consent}>
-                            <strong>
-                                마케팅 활용 동의에 대한 동의 <span>(필수)</span>
-                            </strong>
-                            <p>1. 수집 목적 : 제품 정보, 행사초청, 이벤트, 광고성 정보 제공 및 참여기회를 전화, 문자, 이메일로 안내</p>
-                            <p>2. 수집 항목 : 회사명, 담당자명, 전화번호, 이메일</p>
-                            <p>3. 보유기간 : 동의 철회시까지(2년마다 재동의)</p>
-                            <p>마케팅 활용에 동의하지 않을 권리가 있으나, 동의 거부 시 제품 정보, 행사 정보 등 유익한 정보 수신에 제한이 있을 수 있습니다.</p>
                             <label>
                                 <input type="checkbox" checked={formData.marketting == 1} onChange={(e) => doSetFormData({ marketting: e.target.checked ? 1 : 0 })} />
-                                마케팅 활용에 동의합니다.
+                                마케팅 활용에 동의합니다. (선택)
                             </label>
+                            <button type="button" onClick={() => setTerms('marketting')}>
+                                약관보기
+                            </button>
                         </div>
                     </div>
 
@@ -242,6 +258,16 @@ export default function Contact(props) {
                     </div>
                 </div>
             </main>
+
+            {terms && (
+                <Modal open setOpen={() => setTerms('')} childStyle={{ width: 'min(560px, calc(100% - 32px))' }} title={TERMS[terms].title} isBackBlur>
+                    <div className={styles.terms}>
+                        {TERMS[terms].lines.map((line) => (
+                            <p key={line}>{line}</p>
+                        ))}
+                    </div>
+                </Modal>
+            )}
         </div>
     );
 }
