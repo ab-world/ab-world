@@ -11,28 +11,7 @@ import Modal from '@/component/layout/Modal';
 
 const PRODUCT_OPTION = ['COSMOS', 'K-System ERP', 'Flextudio'];
 
-const SELECT_OPTION = [
-    '이전 사용 경험',
-    '사용하지는 않았으나 예전부터 알고 있었음',
-    '회사 내 추천',
-    '지인 추천',
-    'IT관련 파트너 추천',
-    '영림원 직원(영업, 마케팅 등)',
-    '정부지원사업(스마트팩토리 등) 관련 소개 또는 문서',
-    '네이버/구글 등 포털에서 "영림원"으로 검색',
-    '네이버/구글 등 포털에서 "ERP"으로 검색',
-    '네이버/구글 등 포털에서 기타 검색어로 검색',
-    '온라인 매체 기사',
-    '온라인 배너 광고',
-    '유튜브',
-    '소셜미디어(페이스북, 린크드인 등)',
-    '라디오 광고',
-    '지면 광고(신문, 매거진 등)',
-    '행사(세미나, CEO포럼, 전시회 등)',
-    '전화홍보(Tele-Marketing)',
-    '이메일(뉴스레터, eDM 등)',
-    '마케팅/영업자료'
-];
+const SELECT_OPTION = ['인터넷검색', '지인소개', '기존고객', '기타'];
 
 // 약관보기 모달 내용
 const TERMS = {
@@ -84,10 +63,9 @@ export default function Contact(props) {
 
     const onClickSendEmail = async () => {
         if (formData.product == '옵션을 선택해주세요.') return showErrorNoti('문의 제품은 필수입력 항목입니다.');
-        if (formData.product == 'COSMOS' && formData.visitDemo == '') return showErrorNoti('방문 데모 여부는 필수입력 항목입니다.');
+        if (formData.visitDemo == '') return showErrorNoti('방문 데모 여부는 필수입력 항목입니다.');
         if (trim(formData.companyName) == '') return showErrorNoti('회사명은 필수입력 항목입니다.');
         if (trim(formData.businessKind == '')) return showErrorNoti('업종은 필수입력 항목입니다.');
-        if (trim(formData.businessSize == '')) return showErrorNoti('기업규모(매출액)은 필수입력 항목입니다.');
         if (trim(formData.managerName == '')) return showErrorNoti('담당자는 필수입력 항목입니다.');
         if (trim(formData.contact == '')) return showErrorNoti('연락처는 필수입력 항목입니다.');
         if (trim(formData.email == '')) return showErrorNoti('이메일은 필수입력 항목입니다.');
@@ -97,12 +75,16 @@ export default function Contact(props) {
 
         dispatch(setLoading(true));
 
-        const visitDemo = formData.product == 'COSMOS' ? ` (방문 데모: ${formData.visitDemo})` : '';
-
         const result = await commonApi
             .postApi('/api/send-email', {
                 subject: `[${formData.product}] 도입문의가 접수 되었습니다. `,
-                content: `<div style="white-space:pre-wrap">도입문의가 접수 되었습니다.\n\n문의 제품: ${formData.product}${visitDemo}\n\n0. 유입경로: ${formData.referralSource}\n\n1. 회사정보\n  - 회사명: ${formData.companyName}\n  - 업종: ${formData.businessKind}\n  - 기업규모(매출액): ${formData.businessSize}\n  - 담당자: ${formData.managerName}\n  - 연락처: ${formData.contact}\n  - 이메일: ${formData.email}\n\n2. 문의내용\n${formData.content}\n\n3. 개인정보 수집 활용에 대한 동의: Y\n\n4. 마케팅 활용에 대한 동의: ${formData.marketting == 1 ? 'Y' : 'N'}\n\n</div>`
+                content: `<div style="white-space:pre-wrap">도입문의가 접수 되었습니다.\n\n문의 제품: ${formData.product} (방문 데모: ${formData.visitDemo})\n\n0. 유입경로: ${
+                    formData.referralSource
+                }\n\n1. 회사정보\n  - 회사명: ${formData.companyName}\n  - 업종: ${formData.businessKind}\n  - 이용자수: ${formData.businessSize}\n  - 담당자: ${formData.managerName}\n  - 연락처: ${
+                    formData.contact
+                }\n  - 이메일: ${formData.email}\n\n2. 문의내용\n${formData.content}\n\n3. 개인정보 수집 활용에 대한 동의: Y\n\n4. 마케팅 활용에 대한 동의: ${
+                    formData.marketting == 1 ? 'Y' : 'N'
+                }\n\n</div>`
             })
             .finally(() => dispatch(setLoading(false)));
 
@@ -129,7 +111,7 @@ export default function Contact(props) {
                                     <select
                                         className={formData.product == '옵션을 선택해주세요.' ? styles.placeholder : ''}
                                         value={formData.product}
-                                        onChange={(e) => doSetFormData({ product: e.target.value, visitDemo: '' })}
+                                        onChange={(e) => doSetFormData({ product: e.target.value })}
                                     >
                                         <option value={'옵션을 선택해주세요.'} disabled>
                                             옵션을 선택해주세요.
@@ -143,21 +125,19 @@ export default function Contact(props) {
                                     </select>
                                 </label>
 
-                                {formData.product == 'COSMOS' && (
-                                    <fieldset className={styles.field}>
-                                        <legend className={styles.label}>
-                                            방문 데모 <span>*</span>
-                                        </legend>
-                                        <div className={styles.radioView}>
-                                            {['희망', '희망 안 함'].map((item) => (
-                                                <label key={item}>
-                                                    <input type="radio" name="visitDemo" value={item} checked={formData.visitDemo == item} onChange={(e) => doSetFormData({ visitDemo: e.target.value })} />
-                                                    {item}
-                                                </label>
-                                            ))}
-                                        </div>
-                                    </fieldset>
-                                )}
+                                <fieldset className={styles.field}>
+                                    <legend className={styles.label}>
+                                        방문 데모 <span>*</span>
+                                    </legend>
+                                    <div className={styles.radioView}>
+                                        {['희망', '희망 안 함'].map((item) => (
+                                            <label key={item}>
+                                                <input type="radio" name="visitDemo" value={item} checked={formData.visitDemo == item} onChange={(e) => doSetFormData({ visitDemo: e.target.value })} />
+                                                {item}
+                                            </label>
+                                        ))}
+                                    </div>
+                                </fieldset>
 
                                 <label className={`${styles.field} ${styles.full}`}>
                                     <span className={styles.label}>
@@ -195,10 +175,8 @@ export default function Contact(props) {
                                 </label>
 
                                 <label className={styles.field}>
-                                    <span className={styles.label}>
-                                        기업규모(매출액) <span>*</span>
-                                    </span>
-                                    <input type="text" value={formData.businessSize} onChange={(e) => doSetFormData({ businessSize: e.target.value })} />
+                                    <span className={styles.label}>이용자수</span>
+                                    <input type="text" placeholder="예: 50명" value={formData.businessSize} onChange={(e) => doSetFormData({ businessSize: e.target.value })} />
                                 </label>
 
                                 <label className={styles.field}>
