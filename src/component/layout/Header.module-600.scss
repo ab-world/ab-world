@@ -2,6 +2,8 @@
     .container {
         user-select: none;
         background-color: rgba(0, 0, 0, 0);
+        // 로고 구분선: 투명 헤더는 반투명 흰색, 흰 헤더(.active)는 --border
+        --logo-divider: rgba(255, 255, 255, 0.3);
         position: fixed;
         top: 0;
         width: 100%;
@@ -12,6 +14,7 @@
 
         &.active {
             background-color: var(--background);
+            --logo-divider: var(--border);
         }
 
         .wrapper {
@@ -27,13 +30,13 @@
                 .leftView {
                     flex: 1;
                     display: flex;
-                    gap: 12px;
+                    gap: 16px;
                     align-items: center;
 
                     .imgWrapper {
                         position: relative;
                         overflow: hidden;
-                        width: 40px;
+                        width: 36px;
                         border-radius: 8px;
 
                         &:after {
@@ -48,11 +51,13 @@
                     }
 
                     .imgWrapper2 {
-                        width: 150px;
-                        border-radius: 8px;
+                        // 파트너 로고는 구분선 뒤에 작게 두어 AB 로고가 주가 되게 함
+                        display: flex;
+                        padding: 3px 0 3px 16px;
+                        border-left: 1px solid var(--logo-divider);
 
                         img {
-                            width: 100%;
+                            width: 100px;
                             height: auto;
                             object-fit: cover;
                         }
