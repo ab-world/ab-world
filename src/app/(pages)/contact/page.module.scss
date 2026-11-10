@@ -1,9 +1,12 @@
 .page {
     .main {
         background-color: var(--background);
+        display: flex;
+        flex-direction: column;
         min-height: 100vh;
 
         .mainSection {
+            width: 100%;
             max-width: 948px;
             margin: 80px auto;
             padding: 0 24px;
