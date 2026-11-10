@@ -117,144 +117,148 @@ export default function Contact(props) {
         <div className={styles.page}>
             <main className={styles.main}>
                 <div className={styles.mainSection}>
-                    <h1 className={styles.title}>도입문의</h1>
+                    <div className={styles.flexView}>
+                        <div className={styles.textView}>
+                            <h1 className={styles.title}>도입문의</h1>
 
-                    <div className={styles.form}>
-                        <label className={styles.field}>
-                            <span className={styles.label}>
-                                문의 제품 <span>*</span>
-                            </span>
-                            <select
-                                className={formData.product == '옵션을 선택해주세요.' ? styles.placeholder : ''}
-                                value={formData.product}
-                                onChange={(e) => doSetFormData({ product: e.target.value, visitDemo: '' })}
-                            >
-                                <option value={'옵션을 선택해주세요.'} disabled>
-                                    옵션을 선택해주세요.
-                                </option>
+                            <div className={styles.form}>
+                                <label className={styles.field}>
+                                    <span className={styles.label}>
+                                        문의 제품 <span>*</span>
+                                    </span>
+                                    <select
+                                        className={formData.product == '옵션을 선택해주세요.' ? styles.placeholder : ''}
+                                        value={formData.product}
+                                        onChange={(e) => doSetFormData({ product: e.target.value, visitDemo: '' })}
+                                    >
+                                        <option value={'옵션을 선택해주세요.'} disabled>
+                                            옵션을 선택해주세요.
+                                        </option>
 
-                                {PRODUCT_OPTION.map((item) => (
-                                    <option key={item} value={item}>
-                                        {item}
-                                    </option>
-                                ))}
-                            </select>
-                        </label>
+                                        {PRODUCT_OPTION.map((item) => (
+                                            <option key={item} value={item}>
+                                                {item}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </label>
 
-                        <label className={styles.field}>
-                            <span className={styles.label}>
-                                (주)에이비를 어떻게 알고 문의하게 되셨나요? <span>*</span>
-                            </span>
-                            <select
-                                className={formData.referralSource == '옵션을 선택해주세요.' ? styles.placeholder : ''}
-                                value={formData.referralSource}
-                                onChange={(e) => doSetFormData({ referralSource: e.target.value })}
-                            >
-                                <option value={'옵션을 선택해주세요.'} disabled>
-                                    옵션을 선택해주세요.
-                                </option>
+                                {formData.product == 'COSMOS' && (
+                                    <fieldset className={styles.field}>
+                                        <legend className={styles.label}>
+                                            방문 데모 <span>*</span>
+                                        </legend>
+                                        <div className={styles.radioView}>
+                                            {['희망', '희망 안 함'].map((item) => (
+                                                <label key={item}>
+                                                    <input type="radio" name="visitDemo" value={item} checked={formData.visitDemo == item} onChange={(e) => doSetFormData({ visitDemo: e.target.value })} />
+                                                    {item}
+                                                </label>
+                                            ))}
+                                        </div>
+                                    </fieldset>
+                                )}
 
-                                {SELECT_OPTION.map((item) => (
-                                    <option key={item} value={item}>
-                                        {item}
-                                    </option>
-                                ))}
-                            </select>
-                        </label>
+                                <label className={`${styles.field} ${styles.full}`}>
+                                    <span className={styles.label}>
+                                        (주)에이비를 어떻게 알고 문의하게 되셨나요? <span>*</span>
+                                    </span>
+                                    <select
+                                        className={formData.referralSource == '옵션을 선택해주세요.' ? styles.placeholder : ''}
+                                        value={formData.referralSource}
+                                        onChange={(e) => doSetFormData({ referralSource: e.target.value })}
+                                    >
+                                        <option value={'옵션을 선택해주세요.'} disabled>
+                                            옵션을 선택해주세요.
+                                        </option>
 
-                        {formData.product == 'COSMOS' && (
-                            <fieldset className={styles.field}>
-                                <legend className={styles.label}>
-                                    방문 데모 <span>*</span>
-                                </legend>
-                                <div className={styles.radioView}>
-                                    {['희망', '희망 안 함'].map((item) => (
-                                        <label key={item}>
-                                            <input type="radio" name="visitDemo" value={item} checked={formData.visitDemo == item} onChange={(e) => doSetFormData({ visitDemo: e.target.value })} />
-                                            {item}
-                                        </label>
-                                    ))}
+                                        {SELECT_OPTION.map((item) => (
+                                            <option key={item} value={item}>
+                                                {item}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </label>
+
+                                <label className={styles.field}>
+                                    <span className={styles.label}>
+                                        회사명 <span>*</span>
+                                    </span>
+                                    <input type="text" autoComplete="organization" value={formData.companyName} onChange={(e) => doSetFormData({ companyName: e.target.value })} />
+                                </label>
+
+                                <label className={styles.field}>
+                                    <span className={styles.label}>
+                                        업종 <span>*</span>
+                                    </span>
+                                    <input type="text" value={formData.businessKind} onChange={(e) => doSetFormData({ businessKind: e.target.value })} />
+                                </label>
+
+                                <label className={styles.field}>
+                                    <span className={styles.label}>
+                                        기업규모(매출액) <span>*</span>
+                                    </span>
+                                    <input type="text" value={formData.businessSize} onChange={(e) => doSetFormData({ businessSize: e.target.value })} />
+                                </label>
+
+                                <label className={styles.field}>
+                                    <span className={styles.label}>
+                                        담당자명 <span>*</span>
+                                    </span>
+                                    <input type="text" autoComplete="name" value={formData.managerName} onChange={(e) => doSetFormData({ managerName: e.target.value })} />
+                                </label>
+
+                                <label className={styles.field}>
+                                    <span className={styles.label}>
+                                        연락처 <span>*</span>
+                                    </span>
+                                    <input type="tel" autoComplete="tel" placeholder="010-1234-5678" value={formData.contact} onChange={(e) => doSetFormData({ contact: e.target.value })} />
+                                </label>
+
+                                <label className={styles.field}>
+                                    <span className={styles.label}>
+                                        이메일 <span>*</span>
+                                    </span>
+                                    <input type="email" autoComplete="email" spellCheck={false} value={formData.email} onChange={(e) => doSetFormData({ email: e.target.value })} />
+                                </label>
+
+                                <label className={`${styles.field} ${styles.full}`}>
+                                    <span className={styles.label}>문의내용</span>
+                                    <textarea
+                                        rows={3}
+                                        placeholder="회사 소재 지역(ex. 서울/경기도 등) 및 상세 문의사항을 남겨주십시오."
+                                        value={formData.content}
+                                        onChange={(e) => doSetFormData({ content: e.target.value })}
+                                    />
+                                </label>
+
+                                <div className={styles.consent}>
+                                    <label>
+                                        <input type="checkbox" checked={formData.privacy == 1} onChange={(e) => doSetFormData({ privacy: e.target.checked ? 1 : 0 })} />
+                                        개인정보 수집 및 이용에 동의합니다. <span>(필수)</span>
+                                    </label>
+                                    <button type="button" onClick={() => setTerms('privacy')}>
+                                        약관보기
+                                    </button>
                                 </div>
-                            </fieldset>
-                        )}
 
-                        <label className={styles.field}>
-                            <span className={styles.label}>
-                                회사명 <span>*</span>
-                            </span>
-                            <input type="text" autoComplete="organization" value={formData.companyName} onChange={(e) => doSetFormData({ companyName: e.target.value })} />
-                        </label>
+                                <div className={styles.consent}>
+                                    <label>
+                                        <input type="checkbox" checked={formData.marketting == 1} onChange={(e) => doSetFormData({ marketting: e.target.checked ? 1 : 0 })} />
+                                        마케팅 활용에 동의합니다. (선택)
+                                    </label>
+                                    <button type="button" onClick={() => setTerms('marketting')}>
+                                        약관보기
+                                    </button>
+                                </div>
+                            </div>
 
-                        <label className={styles.field}>
-                            <span className={styles.label}>
-                                업종 <span>*</span>
-                            </span>
-                            <input type="text" value={formData.businessKind} onChange={(e) => doSetFormData({ businessKind: e.target.value })} />
-                        </label>
-
-                        <label className={styles.field}>
-                            <span className={styles.label}>
-                                기업규모(매출액) <span>*</span>
-                            </span>
-                            <input type="text" value={formData.businessSize} onChange={(e) => doSetFormData({ businessSize: e.target.value })} />
-                        </label>
-
-                        <label className={styles.field}>
-                            <span className={styles.label}>
-                                담당자명 <span>*</span>
-                            </span>
-                            <input type="text" autoComplete="name" value={formData.managerName} onChange={(e) => doSetFormData({ managerName: e.target.value })} />
-                        </label>
-
-                        <label className={styles.field}>
-                            <span className={styles.label}>
-                                연락처 <span>*</span>
-                            </span>
-                            <input type="tel" autoComplete="tel" placeholder="010-1234-5678" value={formData.contact} onChange={(e) => doSetFormData({ contact: e.target.value })} />
-                        </label>
-
-                        <label className={styles.field}>
-                            <span className={styles.label}>
-                                이메일 <span>*</span>
-                            </span>
-                            <input type="email" autoComplete="email" spellCheck={false} value={formData.email} onChange={(e) => doSetFormData({ email: e.target.value })} />
-                        </label>
-
-                        <label className={`${styles.field} ${styles.full}`}>
-                            <span className={styles.label}>문의내용</span>
-                            <textarea
-                                rows={3}
-                                placeholder="회사 소재 지역(ex. 서울/경기도 등) 및 상세 문의사항을 남겨주십시오."
-                                value={formData.content}
-                                onChange={(e) => doSetFormData({ content: e.target.value })}
-                            />
-                        </label>
-
-                        <div className={styles.consent}>
-                            <label>
-                                <input type="checkbox" checked={formData.privacy == 1} onChange={(e) => doSetFormData({ privacy: e.target.checked ? 1 : 0 })} />
-                                개인정보 수집 및 이용에 동의합니다. <span>(필수)</span>
-                            </label>
-                            <button type="button" onClick={() => setTerms('privacy')}>
-                                약관보기
-                            </button>
+                            <div className={styles.btnView}>
+                                <button aria-label="Contact" onClick={onClickSendEmail}>
+                                    문의하기
+                                </button>
+                            </div>
                         </div>
-
-                        <div className={styles.consent}>
-                            <label>
-                                <input type="checkbox" checked={formData.marketting == 1} onChange={(e) => doSetFormData({ marketting: e.target.checked ? 1 : 0 })} />
-                                마케팅 활용에 동의합니다. (선택)
-                            </label>
-                            <button type="button" onClick={() => setTerms('marketting')}>
-                                약관보기
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className={styles.btnView}>
-                        <button aria-label="Contact" onClick={onClickSendEmail}>
-                            문의하기
-                        </button>
                     </div>
                 </div>
             </main>

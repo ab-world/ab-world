@@ -1,173 +1,190 @@
 .page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
     .main {
         background-color: var(--background);
         display: flex;
         flex-direction: column;
+        width: 100%;
+        height: 100%;
         min-height: 100vh;
 
         .mainSection {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             width: 100%;
             max-width: 948px;
-            margin: auto;
-            padding: 20px 24px;
+            margin: 80px auto;
+            padding: 0 24px;
 
-            .title {
+            .flexView {
                 margin-top: 80px;
-                color: var(--foreground);
-                font-size: 32px;
-                font-weight: bold;
-            }
 
-            .form {
-                display: grid;
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 26px 20px;
-                margin-top: 24px;
-
-                .field {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 6px;
-                    min-width: 0;
-                    border: 0;
-
-                    &.full {
-                        grid-column: 1 / -1;
-                    }
-                }
-
-                .label {
-                    color: var(--foreground);
-                    font-size: 15px;
-                    font-weight: 600;
-                    word-break: keep-all;
-
-                    span {
-                        color: var(--errorMain);
-                    }
-                }
-
-                // legend 는 flex gap 을 받지 않는다
-                legend.label {
-                    margin-bottom: 6px;
-                }
-
-                input:not([type='radio']):not([type='checkbox']),
-                select,
-                textarea {
-                    width: 100%;
-                    padding: 10px 12px;
-                    border: 1px solid #cfd7e3;
-                    border-radius: 8px;
-                    background-color: var(--background);
-                    font-size: 16px;
-                    transition: border-color 0.15s;
-
-                    &:focus {
-                        border-color: var(--primaryMain);
-                        outline: 2px solid rgba(60, 145, 255, 0.2);
-                    }
-                }
-
-                // 전역에서 appearance 를 꺼서 화살표를 직접 그린다
-                select {
-                    padding-right: 36px;
-                    background: var(--background) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23627084' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 14px center;
-                    cursor: pointer;
-
-                    &.placeholder {
-                        color: var(--grey);
-                    }
-                }
-
-                textarea {
-                    min-height: 220px;
-                    resize: vertical;
-                }
-
-                input[type='radio'],
-                input[type='checkbox'] {
-                    appearance: auto;
-                    flex-shrink: 0;
-                    width: 18px;
-                    height: 18px;
-                    margin: 0;
-                    padding: 0;
-                    border: 0;
-                    box-shadow: none;
-                    accent-color: var(--primaryMain);
-                    cursor: pointer;
-                }
-
-                .radioView {
-                    display: flex;
-                    flex-wrap: wrap;
-                    align-items: center;
-                    gap: 8px 24px;
-                    min-height: 46px;
-
-                    label {
-                        display: flex;
-                        align-items: center;
-                        gap: 6px;
-                        font-size: 16px;
-                        cursor: pointer;
-                    }
-                }
-
-                // 동의 한 줄 - 내용은 약관보기 모달
-                .consent {
-                    display: flex;
-                    align-items: center;
-                    gap: 12px;
-                    word-break: keep-all;
-
-                    label {
-                        display: flex;
-                        align-items: center;
-                        gap: 8px;
+                .textView {
+                    .title {
+                        padding-bottom: 20px;
+                        border-bottom: 1px solid var(--border);
                         color: var(--foreground);
-                        font-size: 15px;
-                        font-weight: 600;
-                        cursor: pointer;
+                        font-size: 28px;
+                        font-weight: bold;
+                    }
 
-                        span {
-                            color: var(--errorMain);
+                    .form {
+                        display: grid;
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                        gap: 26px 20px;
+                        margin-top: 24px;
+
+                        .field {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 6px;
+                            min-width: 0;
+                            border: 0;
+
+                            &.full {
+                                grid-column: 1 / -1;
+                            }
+                        }
+
+                        .label {
+                            color: var(--foreground);
+                            font-size: 15px;
+                            font-weight: 600;
+                            word-break: keep-all;
+
+                            span {
+                                color: var(--errorMain);
+                            }
+                        }
+
+                        // legend 는 flex gap 을 받지 않는다
+                        legend.label {
+                            margin-bottom: 6px;
+                        }
+
+                        input:not([type='radio']):not([type='checkbox']),
+                        select,
+                        textarea {
+                            width: 100%;
+                            padding: 10px 12px;
+                            border: 1px solid #cfd7e3;
+                            border-radius: 8px;
+                            background-color: var(--background);
+                            font-size: 16px;
+                            transition: border-color 0.15s;
+
+                            &:focus {
+                                border-color: var(--primaryMain);
+                                outline: 2px solid rgba(60, 145, 255, 0.2);
+                            }
+                        }
+
+                        // 전역에서 appearance 를 꺼서 화살표를 직접 그린다
+                        select {
+                            padding-right: 36px;
+                            background: var(--background) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23627084' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 14px center;
+                            cursor: pointer;
+
+                            &.placeholder {
+                                color: var(--grey);
+                            }
+                        }
+
+                        textarea {
+                            min-height: 220px;
+                            resize: vertical;
+                        }
+
+                        input[type='radio'],
+                        input[type='checkbox'] {
+                            appearance: auto;
+                            flex-shrink: 0;
+                            width: 18px;
+                            height: 18px;
+                            margin: 0;
+                            padding: 0;
+                            border: 0;
+                            box-shadow: none;
+                            accent-color: var(--primaryMain);
+                            cursor: pointer;
+                        }
+
+                        .radioView {
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            gap: 8px 24px;
+                            min-height: 46px;
+
+                            label {
+                                display: flex;
+                                align-items: center;
+                                gap: 6px;
+                                font-size: 16px;
+                                cursor: pointer;
+                            }
+                        }
+
+                        // 동의 한 줄 - 내용은 약관보기 모달
+                        .consent {
+                            display: flex;
+                            align-items: center;
+                            gap: 12px;
+                            word-break: keep-all;
+
+                            label {
+                                display: flex;
+                                align-items: center;
+                                gap: 8px;
+                                color: var(--foreground);
+                                font-size: 15px;
+                                font-weight: 600;
+                                cursor: pointer;
+
+                                span {
+                                    color: var(--errorMain);
+                                }
+                            }
+
+                            button {
+                                color: #5f6670;
+                                font-size: 14px;
+                                text-decoration: underline;
+                                text-underline-offset: 2px;
+                                cursor: pointer;
+                            }
                         }
                     }
 
-                    button {
-                        color: #5f6670;
-                        font-size: 14px;
-                        text-decoration: underline;
-                        text-underline-offset: 2px;
-                        cursor: pointer;
-                    }
-                }
-            }
+                    .btnView {
+                        margin-top: 20px;
+                        text-align: center;
 
-            .btnView {
-                margin-top: 20px;
-                text-align: center;
+                        button {
+                            min-width: 160px;
+                            padding: 12px 28px;
+                            border-radius: 10px;
+                            background-color: var(--primaryMain);
+                            color: var(--white);
+                            font-size: 16px;
+                            font-weight: bold;
+                            cursor: pointer;
+                            transition: background-color 0.15s, transform 0.1s;
 
-                button {
-                    min-width: 160px;
-                    padding: 12px 28px;
-                    border-radius: 10px;
-                    background-color: var(--primaryMain);
-                    color: var(--white);
-                    font-size: 16px;
-                    font-weight: bold;
-                    cursor: pointer;
-                    transition: background-color 0.15s, transform 0.1s;
+                            &:hover {
+                                background-color: var(--primaryDark);
+                                color: var(--white);
+                            }
 
-                    &:hover {
-                        background-color: var(--primaryDark);
-                        color: var(--white);
-                    }
-
-                    &:active {
-                        transform: scale(0.97);
+                            &:active {
+                                transform: scale(0.97);
+                            }
+                        }
                     }
                 }
             }
@@ -188,25 +205,29 @@
 
 @media (max-width: 600px) {
     .page .main .mainSection {
-        margin: 64px auto;
-        padding: 0 16px;
+        margin: 60px auto;
+        padding: 0 12px;
 
-        .title {
-            margin-top: 40px;
-            font-size: 28px;
-        }
+        .flexView {
+            margin-top: 12px;
 
-        .form {
-            grid-template-columns: minmax(0, 1fr);
-            margin-top: 24px;
+            .textView {
+                .title {
+                    font-size: 22px;
+                }
 
-            .consent {
-                flex-wrap: wrap;
+                .form {
+                    grid-template-columns: minmax(0, 1fr);
+
+                    .consent {
+                        flex-wrap: wrap;
+                    }
+                }
+
+                .btnView button {
+                    width: 100%;
+                }
             }
-        }
-
-        .btnView button {
-            width: 100%;
         }
     }
 }
