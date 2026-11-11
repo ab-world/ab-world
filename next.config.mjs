@@ -26,6 +26,10 @@ const nextConfig = {
     },
     experimental: {
         optimizeCss: true
+    },
+    // 구 정적 사이트 주소가 구글 색인에 남아 404로 잡히므로 홈으로 영구 이동
+    async redirects() {
+        return [{ source: '/index.html', destination: '/', permanent: true }];
     }
 };
 
